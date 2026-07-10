@@ -39,7 +39,7 @@ Defaults:
 - vanilla jump crit disabled;
 - Sol's crit system enabled.
 
-The code rolls any incoming damage directly sourced from a player. When successful:
+Critical chance is rolled for incoming damage directly caused by a player. When successful:
 
 ```text
 crit multiplier = 1 + (total Crit DMG - 50) × 0.005
@@ -68,7 +68,7 @@ Set ATK% is included. The 0.75 efficiencies and the entire universal handler are
 
 ## Speed caps
 
-After per-slot relic modifiers are installed, the code sums relic attack-speed and move-speed contributions. If a cap is exceeded, every slot's contribution is proportionally scaled down.
+After each equipped relic contributes its modifiers, total Attack Speed and Move Speed are checked against their caps. If a cap is exceeded, every slot's contribution is proportionally scaled down.
 
 - Default maximum relic ATK Speed bonus: **+25%**
 - Default maximum relic Move Speed bonus: **+20%**
@@ -88,7 +88,7 @@ A displayed +20 Durability gives about 16.67% prevention, not a flat 20%. It als
 ## Luck and jump
 
 - Luck% becomes Minecraft Luck attribute at `effective value / 100 × 5`.
-- Jump Boost modifies jump movement; the code comments identify roughly +35% as the normal two-block-jump region.
+- Jump Boost modifies jump movement; roughly +35% reaches the normal two-block-jump region.
 
 ## Build archetypes
 
@@ -98,4 +98,3 @@ A displayed +20 Durability gives about 16.67% prevention, not a flat 20%. It als
   <div class="relic-card relic-card--green"><h3>Bulwark</h3><p>HP%/DEF% chest, flat-HP boots, Iron/Turtle/Leather set. Mix HP and DEF rather than duplicating one axis blindly.</p></div>
   <div class="relic-card"><h3>Tempo</h3><p>ATK Speed and Move Speed, stopping near configured caps. Use freed sub-stat slots for damage or survival.</p></div>
 </div>
-

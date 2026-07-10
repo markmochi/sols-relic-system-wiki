@@ -1,7 +1,5 @@
 # Installation
 
-<span class="source-stamp">Source: loader metadata and build configuration</span>
-
 Sol's Relic System requires the matching build of **Sol's Item Rarity 1.7 or newer**. Keep the Minecraft version and loader identical across both mods.
 
 ## Version matrix
@@ -40,7 +38,7 @@ Then open Controls and look for the **Sol's Relic System** category. The default
 
 ## Configuration location
 
-The code creates the following files in the server configuration directory:
+The mod creates the following files in the server configuration directory:
 
 ```text
 config/
@@ -68,4 +66,3 @@ Sol's Damage Indicator can display the custom crits more clearly. The Relic Syst
 | Server rejects connection | Client/server mod lists differ | Install matching versions on both sides |
 | Relic stats appear twice | Item Rarity bonuses were re-enabled | Keep `disableRarityStatBonuses = true` unless intentional |
 | Items never become relics | System disabled, item excluded, or utility tool | Check the common config and whitelist rules |
-

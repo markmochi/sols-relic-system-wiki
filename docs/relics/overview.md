@@ -4,7 +4,7 @@ A relic is an eligible ItemStack carrying a `SolsRelicData` payload. Rarity is s
 
 ## Anatomy of a relic
 
-![A code-faithful mock of the relic tooltip](../assets/images/relic-tooltip.svg){ .game-shot }
+![An example relic tooltip](../assets/images/relic-tooltip.svg){ .game-shot }
 
 | Part | What it controls |
 |---|---|
@@ -30,7 +30,7 @@ A relic is an eligible ItemStack carrying a `SolsRelicData` payload. Rarity is s
 | <span class="rarity rarity--mythical">Mythical</span> | 3–4 | +20 | +4, +8, +12, +16, +20 |
 | <span class="rarity rarity--supreme">Supreme</span> | 4 | +24 | +4, +8, +12, +16, +20, +24 |
 
-The code also contains a fixed-count helper, but normal assignment and ascension use the **random range** above.
+Normal relic assignment and ascension use the **random range** above.
 
 ## When data is assigned
 
@@ -58,4 +58,3 @@ This is why two relics with identical stored rolls can display different effecti
 3. **Dust redistribution:** deliberately non-deterministic and performed only after the Dust is committed.
 
 Ascension uses a stable seed derived from the item, rarity transition, core level, ascension level, main stat, and sub-stat types. Reopening the same preview is therefore not a reroll exploit.
-

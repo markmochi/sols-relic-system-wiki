@@ -45,7 +45,7 @@ Whitelisted non-armor items use the weapon/main-hand main-stat pool. This can in
 
 ## Whole-mod warning
 
-The code permits a bare namespace in the whitelist, but it does not filter food, blocks, crafting materials, or curios afterward. Prefer exact IDs unless the namespace contains only suitable equipment.
+A bare namespace is allowed in the whitelist, but food, blocks, crafting materials, and curios are not filtered out afterward. Prefer exact IDs unless the namespace contains only suitable equipment.
 
 ## Existing items
 
@@ -53,7 +53,7 @@ Adding an item to the blacklist prevents normal future eligibility; it does not 
 
 Adding an item to the whitelist affects it when assignment next processes an eligible data-less stack. A fresh copy is the simplest test.
 
-## Workflow
+## Updating the lists
 
 1. Enable F3+H advanced tooltips.
 2. Record the exact lower-case registry ID.
@@ -61,4 +61,3 @@ Adding an item to the whitelist affects it when assignment next processes an eli
 4. Validate the JSON.
 5. Run `/srs reload`.
 6. Test a fresh stack and inspect its main-stat pool.
-

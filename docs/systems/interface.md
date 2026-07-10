@@ -21,7 +21,7 @@ The main item name can be prefixed with its `+level` when `showLevelInName` is e
 
 Press ++i++ while no other GUI is open. The key can be changed under Controls → Sol's Relic System.
 
-![Stat Summary representation based on screen code](../assets/images/stat-summary.svg){ .game-shot }
+![Stat Summary screen overview](../assets/images/stat-summary.svg){ .game-shot }
 
 The screen aggregates effective equipped/phantom stats, base Crit values, caps, and active sets. The command equivalent is `/srs stats`.
 
@@ -52,5 +52,4 @@ Dust has a confirmation/pity-selection phase, animated redistribution, and an Ol
 `/srs recycle` shows the held relic and exact Tier III core refund. It does not destroy the item until confirmation and revalidation.
 
 !!! note "About relic locking"
-    The current v1.55 common config still exposes a `relicLock.enabled` compatibility setting and the tooltip class contains lock-display helpers, but the registered client key map only installs the Stat Summary key. This guide does not claim an active X-key lock workflow that the executable v1.55 code does not register.
-
+    In v1.55, the only available Sol's Relic System keybind is ++i++ for Stat Summary. Older references to an X-key relic lock do not apply to this version.

@@ -1,7 +1,5 @@
 # Eligible equipment
 
-<span class="source-stamp">Source: RelicDataManager.isRelicEligible / isWeapon / isArmor</span>
-
 Eligibility runs in this order:
 
 1. A registered special relic is accepted.
@@ -52,7 +50,7 @@ The current v1.55 code detects utility behavior before accepting generic tags or
 - ordinary axes, hatchets, and lumber axes;
 - similarly named modded mining tools detected from block-breaking behavior.
 
-This is a deliberate current-code distinction. A server owner can opt a specific tool in through `relic_whitelist.json`.
+This is intentional. A server owner can allow a specific tool through `relic_whitelist.json`.
 
 !!! tip "Server-safe compatibility fix"
     Prefer whitelisting one item ID, such as `someweapons:moon_blade`. Whitelisting a whole namespace forces every item from that mod—including food, materials, and blocks—through relic eligibility as a main-hand item.
@@ -70,4 +68,3 @@ Check in this order:
 3. It is actually equippable armor or detected as a weapon.
 4. If it is a utility/unusual item, add its exact ID to the whitelist.
 5. Run `/srs reload`, then reacquire or reprocess the item.
-

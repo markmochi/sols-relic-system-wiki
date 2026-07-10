@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1060" height="600" viewBox="0 0 1060 600" role="img" aria-labelledby="t d">
-  <title id="t">Relic Stat Summary screen</title><desc id="d">A visual representation of the I-key Stat Summary with offensive, defensive, utility, and active set totals.</desc>
+  <title id="t">Relic Stat Summary screen</title><desc id="d">The I-key Stat Summary with offensive, defensive, utility, and active set totals.</desc>
   <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#070c13"/><stop offset="1" stop-color="#111a27"/></linearGradient><linearGradient id="head" x2="1"><stop stop-color="#172536"/><stop offset="1" stop-color="#101824"/></linearGradient></defs>
   <rect width="1060" height="600" fill="url(#bg)"/><path d="M22 20H1038V580H22Z" fill="none" stroke="#53edf3" stroke-opacity=".25"/>
   <g transform="translate(125 72)" font-family="Arial,sans-serif"><path d="M14 0H796L810 14V440L796 454H14L0 440V14Z" fill="#090f18" stroke="#edc96d" stroke-width="2"/><path d="M12 12H798V80H12Z" fill="url(#head)" stroke="#53edf3" stroke-opacity=".25"/><text x="405" y="43" text-anchor="middle" fill="#edc96d" font-family="Georgia,serif" font-size="25" font-weight="bold">✦ RELIC STAT SUMMARY ✦</text><text x="405" y="65" text-anchor="middle" fill="#7f8ea3" font-size="10" letter-spacing="3">EQUIPPED + ACTIVE PHANTOM + SET BONUSES</text>
@@ -10,6 +10,5 @@
     <!-- sets -->
     <g transform="translate(28 334)"><rect width="754" height="86" fill="#111b21" stroke="#70dc9a" stroke-opacity=".55"/><text x="18" y="28" fill="#70dc9a" font-size="14" font-weight="bold">ACTIVE SETS</text><text x="18" y="56" fill="#edc96d" font-size="14">Netherite · 4 / 4</text><text x="190" y="56" fill="#b5c1d1" font-size="13">+25% ATK · +5% Crit Rate · +10% Crit DMG</text><text x="18" y="76" fill="#6d798a" font-size="11">2-piece and 4-piece entries are combined in the live total.</text></g>
   </g>
-  <g font-family="Arial,sans-serif"><text x="44" y="42" fill="#53edf3" font-size="12" font-weight="bold">DEFAULT KEY</text><rect x="44" y="52" width="42" height="42" rx="5" fill="#151e2b" stroke="#8796aa"/><text x="65" y="80" text-anchor="middle" fill="#fff" font-size="20" font-weight="bold">I</text><text x="44" y="112" fill="#76859a" font-size="11">No other GUI open</text><text x="845" y="552" fill="#7f8ea3" font-size="11">Visual representation based on StatSummaryScreen</text></g>
+  <g font-family="Arial,sans-serif"><text x="44" y="42" fill="#53edf3" font-size="12" font-weight="bold">DEFAULT KEY</text><rect x="44" y="52" width="42" height="42" rx="5" fill="#151e2b" stroke="#8796aa"/><text x="65" y="80" text-anchor="middle" fill="#fff" font-size="20" font-weight="bold">I</text><text x="44" y="112" fill="#76859a" font-size="11">No other GUI open</text><text x="845" y="552" fill="#7f8ea3" font-size="11">Relic totals at a glance</text></g>
 </svg>
-

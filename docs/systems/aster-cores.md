@@ -10,7 +10,7 @@ Tier I is the strongest and rarest core. Tier numbering describes potency, not t
 
 ## Mob drops
 
-On an allowed entity killed directly by a player, the code performs one combined tier roll:
+When a player directly kills an allowed entity, the game performs one combined tier roll:
 
 | Outcome | Default interval on the roll | Exact chance |
 |---|---:|---:|
@@ -37,7 +37,7 @@ Server owners can add exact entity IDs, namespaces, or UUID entries in `aster_co
 
 ## Bonus Resonance drops
 
-Before checking whether ordinary Aster Core drops are enabled, the same allowed-mob handler makes a separate roll:
+The same allowed mobs also make a separate rare-material roll before the ordinary Aster Core drop check:
 
 - **Resonance Core II:** 0.5%
 - **Resonance Core I:** 0.8% after the Core II interval
@@ -69,4 +69,3 @@ When a chest core pool succeeds, the tier is selected with weights proportional 
 - Prioritize End City/Ancient City exploration for higher chest odds.
 - Save Tier I cores for expensive late levels when fewer inventory slots and confirmation cycles matter.
 - Use surplus Tier III cores for fine-grained progress and recycling refunds.
-

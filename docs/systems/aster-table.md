@@ -1,8 +1,8 @@
 # Aster Table
 
-The Aster Table is the central workstation. It routes the material in its right slot to one of three server-authoritative flows.
+The Aster Table is the central workstation. The material placed in its right slot determines which relic operation it performs.
 
-![Aster Table reconstructed from the block model and its real textures](../assets/images/aster-table-render.svg){ .game-shot }
+![The Aster Table relic-forging workstation](../assets/images/aster-table-render.svg){ .game-shot }
 
 | Right-slot material | Operation |
 |---|---|
@@ -51,7 +51,7 @@ The server holds recovery copies during the choice phase. Disconnect recovery re
 
 ## Physical properties
 
-The block code gives the table:
+The Aster Table has:
 
 - 2.5 hardness and 6 blast resistance;
 - stone sound;
@@ -61,4 +61,3 @@ The block code gives the table:
 - horizontal facing based on placement.
 
 It requires the correct tool for drops.
-

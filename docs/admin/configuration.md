@@ -1,7 +1,5 @@
 # Server configuration
 
-<span class="source-stamp">Source: RelicConfig v1.55</span>
-
 The common TOML controls global numbers and switches. JSON files handle entity lists, per-entity Dust chances, item inclusion/exclusion, and armor sets.
 
 ## General
@@ -140,4 +138,3 @@ Use `/srs reload` for the generated JSON files. Common TOML values are synchroni
 
 !!! danger "Back up before changing live progression"
     XP costs, core XP, max sub-stats, and refund values affect existing items and future operations. Test changes on copies of real relics before deploying them to a production server.
-

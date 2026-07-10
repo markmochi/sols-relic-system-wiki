@@ -7,14 +7,13 @@ hide:
 
 <section class="relic-hero">
   <div>
-    <div class="relic-hero__eyebrow">The code-verified field guide</div>
+    <div class="relic-hero__eyebrow">The complete relic field guide</div>
     <h1>Forge power.<br>Rewrite fate.</h1>
     <p class="relic-hero__lead">Turn compatible weapons and armor into long-term RPG gear. Hunt upgrade materials, shape a build through milestone rolls, ascend rarity, and use Dust to redistribute a finished relic's power.</p>
     <div class="relic-hero__actions">
       <a class="relic-button" href="getting-started/quick-start/">Begin the first relic →</a>
       <a class="relic-button relic-button--ghost" href="relics/optimization/">Buildcrafting guide</a>
     </div>
-    <p><span class="source-stamp">Verified against all four v1.55 code lines</span></p>
   </div>
   <div class="hero-relics" aria-label="Relic materials from the mod">
     <div class="item-frame"><div class="item-sprite item-sprite--t2"></div><small>Aster Core II</small></div>
@@ -43,8 +42,8 @@ hide:
 5. **Finish or recycle.** Keep a strong max-level relic, reroll its upgrade distribution with Dust, ascend it, or recycle an unwanted leveled relic.
 6. **Build around equipment.** Material multipliers, set bonuses, speed caps, offhand efficiency, and phantom overrides determine the effective result.
 
-!!! warning "The guide follows executable behavior"
-    Defaults and rules here come from Java classes and resource JSON in mod v1.55. If an older mod description disagrees, use the values shown in this guide for v1.55.
+!!! info "Default settings"
+    Values shown throughout the guide use Sol's Relic System v1.55 defaults. Server configuration can change drop rates, XP, caps, eligible items, armor sets, and other balance settings.
 
 ## What is covered
 
@@ -56,4 +55,3 @@ hide:
 - Effective stats, critical hits, universal damage, durability, offhand penalties, and material scaling
 - Armor sets, phantom weapon slots, recycling, screens, tooltips, advancements, and commands
 - Every generated configuration file and practical server examples
-

@@ -50,7 +50,7 @@ The main stat also grows at every level, including milestones.
 
 ## Deterministic milestone seed
 
-Each relic stores a seed at creation. For a milestone, the code mixes that seed with the milestone level, then uses the result for both target choice and roll value. Therefore:
+Each relic receives its own seed when created. Milestones combine that seed with the milestone level to choose the target stat and roll value. Therefore:
 
 - reloading does not change an outcome;
 - moving the relic to another player does not change it;
@@ -77,4 +77,3 @@ Enter the relic's current stored EXP shown in its tooltip. This calculator uses 
 ## Upgrade safety
 
 Before committing, the server rechecks the relic level, the stored seed, the material type, and the required core count. Confirmation cancellation leaves the table inputs untouched. On success, the upgraded copy is created before inputs are consumed; if the output cannot safely enter inventory, the operation reports failure.
-

@@ -1,6 +1,6 @@
 # Resonance advancements
 
-The v1.55 resource code adds an advancement chain driven by inventory possession.
+Sol's Relic System v1.55 includes an advancement chain based on collecting its rare materials.
 
 | Advancement | Frame | Trigger |
 |---|---|---|
@@ -24,4 +24,3 @@ All are visible, show a toast, and announce in chat. The chain tracks obtaining 
 
 !!! tip "Sixfold Sovereign"
     Crafting later cores consumes earlier ones, so plan extra copies if you want to hold I–VI simultaneously.
-

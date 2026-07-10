@@ -16,7 +16,7 @@ Dust is an endgame redistribution tool. It does **not** roll a new stat set.
 
 ## What is redistributed
 
-The code counts the total upgrade points across all sub-stats, then generates a new allocation with the exact same total.
+The reroll counts all upgrade points across the relic's sub-stats, then generates a new allocation with the exact same total.
 
 ```text
 old: Crit DMG +0 | ATK% +3 | HP% +0 | Luck +1   (4 points)
@@ -88,7 +88,7 @@ Inputs are consumed before the result is offered, while the server keeps copies 
 
 ### Crafting
 
-One Dust can be crafted with **eight Resonance Core V** around a feather. This recipe exists in the v1.55 resource code and is intentionally very expensive.
+One Dust can be crafted with **eight Resonance Core V** around a feather, making it a deliberately expensive endgame recipe.
 
 ## Spending advice
 
@@ -97,4 +97,3 @@ One Dust can be crafted with **eight Resonance Core V** around a feather. This r
 3. A relic with more milestone points gives Dust more meaningful distributions.
 4. Time the fifth attempt for two stats you are happy to receive.
 5. Judge the actual effective values, not only the +N dots.
-
