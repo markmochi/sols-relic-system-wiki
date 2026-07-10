@@ -1,0 +1,107 @@
+site_name: Sol's Relic System
+site_description: The complete code-verified field guide to relics, ascension, builds, and server configuration.
+site_url: https://markmochi.github.io/sols-relic-system-wiki/
+repo_url: https://github.com/markmochi/sols-relic-system-wiki
+repo_name: Sol's Relic System Wiki
+copyright: Code-verified for Sol's Relic System v1.55
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  favicon: assets/textures/aster_core_tier1.png
+  logo: assets/textures/aster_core_tier1.png
+  font: false
+  palette:
+    scheme: slate
+    primary: custom
+    accent: custom
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
+
+plugins:
+  - search:
+      separator: '[\\s\\-\\.]+'
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_css:
+  - assets/stylesheets/arcane.css
+
+extra_javascript:
+  - assets/javascripts/relic-tools.js
+
+extra:
+  generator: false
+  social: []
+
+nav:
+  - Field Guide: index.md
+  - Start Here:
+      - Installation: getting-started/installation.md
+      - Five-minute start: getting-started/quick-start.md
+      - Version support: getting-started/version-support.md
+  - Relics:
+      - Relics explained: relics/overview.md
+      - Eligible equipment: relics/eligible-items.md
+      - Stats and roll values: relics/stats.md
+      - Leveling and milestones: relics/leveling.md
+      - Roll better relics: relics/optimization.md
+  - Progression:
+      - Aster Table: systems/aster-table.md
+      - Aster Cores and drops: systems/aster-cores.md
+      - Resonance ascension: systems/ascension.md
+      - Dust rerolls: systems/dust-rerolls.md
+      - Recycling: systems/recycling.md
+      - Advancements: systems/advancements.md
+  - Builds & Equipment:
+      - Combat stats: systems/combat-stats.md
+      - Armor set bonuses: systems/set-bonuses.md
+      - Phantom weapon slots: systems/phantom-slots.md
+      - Screens and tooltips: systems/interface.md
+  - Reference:
+      - Recipes: reference/recipes.md
+      - XP tables: reference/xp-tables.md
+      - Commands: reference/commands.md
+      - Compatibility: reference/compatibility.md
+      - FAQ & troubleshooting: reference/troubleshooting.md
+  - Server Owners:
+      - Configuration: admin/configuration.md
+      - Mob and chest drops: admin/entity-drops.md
+      - Item blacklist & whitelist: admin/item-control.md
+      - Custom armor sets: admin/custom-sets.md
+  - About:
+      - Code sources & verification: about/code-sources.md
