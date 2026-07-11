@@ -4,7 +4,7 @@ Every recipe is shaped: place each ingredient in the exact slot shown.
 
 ## Aster Table
 
-![Aster Table crafting recipe](../assets/images/recipes/aster-table.png){ .recipe-image }
+![Aster Table crafting recipe](../assets/images/recipes/aster-table-recipe.png){ .recipe-image }
 
 The top-center slot accepts any Aster Core tier.
 

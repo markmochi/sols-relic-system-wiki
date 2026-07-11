@@ -37,7 +37,7 @@ Resonance Core I (0.8%) and II (0.5%) use a separate roll and may drop alongside
 
 Use any item in `#solsrelicsystem:aster_cores` in the top-center slot.
 
-![Aster Table crafting recipe](../assets/images/recipes/aster-table.png){ .recipe-image }
+![Aster Table crafting recipe](../assets/images/recipes/aster-table-recipe.png){ .recipe-image }
 
 Place and use the table. It has two progression inputs: relic on the left and material on the right. Your armor slots and inventory remain visible for convenient gear management.
 
