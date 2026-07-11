@@ -1,8 +1,6 @@
 site_name: Sol's Relic System
 site_description: The complete field guide to relics, ascension, builds, and server configuration.
 site_url: https://markmochi.github.io/sols-relic-system-wiki/
-repo_url: https://github.com/markmochi/sols-relic-system-wiki
-repo_name: Sol's Relic System Wiki
 copyright: Sol's Relic System v1.55 Field Guide
 
 theme:
@@ -98,6 +96,7 @@ nav:
       - Commands: reference/commands.md
       - Compatibility: reference/compatibility.md
       - FAQ & troubleshooting: reference/troubleshooting.md
+      - Report a bug: reference/reporting-issues.md
   - Server Owners:
       - Configuration: admin/configuration.md
       - Mob and chest drops: admin/entity-drops.md

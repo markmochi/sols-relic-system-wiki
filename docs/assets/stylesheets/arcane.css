@@ -209,18 +209,15 @@ body {
 .rarity--common { color:#b7b7b7; }.rarity--uncommon { color:#63d879; }.rarity--rare { color:#58aef6; }
 .rarity--epic { color:#b578f0; }.rarity--legendary { color:#f0bd58; }.rarity--mythical { color:#f16f7b; }.rarity--supreme { color:#6ff5ee; text-shadow:0 0 8px rgba(111,245,238,.4); }
 
-.recipe {
-  display:inline-grid;
-  grid-template-columns:repeat(3,3.05rem);
-  gap:.18rem;
-  padding:.65rem;
-  border:1px solid #5a6577;
-  background:#c5c5c5;
-  box-shadow:inset 2px 2px #fff,inset -2px -2px #555,0 10px 26px rgba(0,0,0,.28);
+.md-typeset img.recipe-image {
+  display:block;
+  width:min(100%,23.375rem);
+  height:auto;
+  margin:1rem 0 1.25rem;
+  image-rendering:pixelated;
+  border:1px solid rgba(83,237,243,.18);
+  box-shadow:0 0 0 3px rgba(7,11,18,.85),0 12px 30px rgba(0,0,0,.38),0 0 24px rgba(83,237,243,.07);
 }
-.recipe__slot { width:3.05rem;height:3.05rem;display:grid;place-items:center;color:#18202b;font-weight:800;text-align:center;font-size:.57rem;line-height:1.05;border:2px solid;border-color:#777 #fff #fff #777;background:#8b8b8b; }
-.recipe__slot img { width:2.2rem;height:2.2rem;image-rendering:pixelated;object-fit:cover;object-position:top; }
-.recipe__slot--empty { color:transparent; }
 
 .game-shot { display:block; width:min(100%,54rem); margin:1.2rem auto; border:1px solid rgba(237,201,109,.35); background:#080d14; box-shadow:var(--relic-shadow); }
 .gallery-row { display:flex; flex-wrap:wrap; gap:.75rem; margin:1rem 0; }

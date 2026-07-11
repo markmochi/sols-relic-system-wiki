@@ -75,7 +75,6 @@ Only relics above +0 are valid. Recycling is also disabled in Creative and can b
 - Run `/srs reload` as Game Master.
 - For common TOML changes, restart the server if behavior remains cached/synced.
 
-## Where should I report a bug?
+## Still need help?
 
-Include Minecraft version, loader/version, Relic System version, Item Rarity version, relevant config files, the exact item/entity registry ID, reproduction steps, and server log excerpt. For roll disputes, include a screenshot of the full tooltip and Aster Table preview.
-
+Use the [bug-report guide](reporting-issues.md) to collect the right versions, logs, screenshots, and reproduction steps before opening an issue. A complete report makes the problem much easier to reproduce and fix.

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Read the bug-report guide
+    url: https://markmochi.github.io/sols-relic-system-wiki/reference/reporting-issues/
+    about: Learn which versions, logs, screenshots, and reproduction steps to include.

@@ -88,6 +88,8 @@ Inputs are consumed before the result is offered, while the server keeps copies 
 
 ### Crafting
 
+![Dust of Enlightenment crafting recipe](../assets/images/recipes/dust-of-enlightenment.png){ .recipe-image }
+
 One Dust can be crafted with **eight Resonance Core V** around a feather, making it a deliberately expensive endgame recipe.
 
 ## Spending advice

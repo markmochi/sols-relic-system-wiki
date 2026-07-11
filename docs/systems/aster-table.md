@@ -12,11 +12,7 @@ The Aster Table is the central workstation. The material placed in its right slo
 
 ## Crafting
 
-<div class="recipe" aria-label="Aster Table crafting recipe">
-  <div class="recipe__slot">Book</div><div class="recipe__slot">Any Aster<br>Core</div><div class="recipe__slot">Book</div>
-  <div class="recipe__slot">Diamond</div><div class="recipe__slot">Anvil</div><div class="recipe__slot">Diamond</div>
-  <div class="recipe__slot">Diamond</div><div class="recipe__slot">Diamond</div><div class="recipe__slot">Diamond</div>
-</div>
+![Aster Table crafting recipe](../assets/images/recipes/aster-table.png){ .recipe-image }
 
 The top-center ingredient is the tag `solsrelicsystem:aster_cores`; datapacks may extend that tag.
 

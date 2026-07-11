@@ -1,0 +1,136 @@
+name: Bug report
+description: Report a reproducible problem with Sol's Relic System
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Sol's Relic System. Complete every required field and remove private information from logs before uploading them.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and did not find the same problem.
+          required: true
+        - label: I read the wiki's troubleshooting and bug-report guides.
+          required: true
+        - label: I can reproduce this problem with Sol's Relic System installed.
+          required: true
+
+  - type: dropdown
+    id: minecraft
+    attributes:
+      label: Minecraft version
+      options:
+        - 1.16.5
+        - 1.20.1
+        - 1.21.1
+        - 1.21.11
+        - Other / unsupported
+    validations:
+      required: true
+
+  - type: input
+    id: loader
+    attributes:
+      label: Mod loader and version
+      description: Include Forge or NeoForge and its complete version number.
+      placeholder: "NeoForge 21.1.176"
+    validations:
+      required: true
+
+  - type: input
+    id: relic_version
+    attributes:
+      label: Sol's Relic System version
+      placeholder: "1.55"
+    validations:
+      required: true
+
+  - type: input
+    id: rarity_version
+    attributes:
+      label: Sol's Item Rarity version
+      placeholder: "1.7"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Where does the bug occur?
+      multiple: true
+      options:
+        - Singleplayer
+        - LAN world
+        - Dedicated server
+        - Client only
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Explain the actual result and what you expected instead.
+      placeholder: "Actual result:\n\nExpected result:"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Give the shortest numbered sequence that causes the problem.
+      placeholder: "1. Equip ...\n2. Place ...\n3. Click ...\n4. Observe ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: mods
+    attributes:
+      label: Other mods, modpack, and datapacks
+      description: List other mods or give the exact modpack name and version. Mention custom datapacks.
+      placeholder: "Modpack and version, or attach a mod list"
+    validations:
+      required: true
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Configuration changes
+      description: List relevant config changes, item/entity IDs, or write “None.”
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and crash report
+      description: Drag latest.log or the matching crash report here. Remove tokens, IP addresses, and other private data first.
+    validations:
+      required: true
+
+  - type: textarea
+    id: media
+    attributes:
+      label: Screenshots or video
+      description: Drag files here. For relic-stat bugs, show the full tooltip and relevant Aster Table screen.
+
+  - type: textarea
+    id: minimal_test
+    attributes:
+      label: Minimal-mod test
+      description: Does it still happen with only Sol's Relic System, Sol's Item Rarity, and required dependencies? If not tested, explain why.
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: Add anything else that may help reproduce the problem.

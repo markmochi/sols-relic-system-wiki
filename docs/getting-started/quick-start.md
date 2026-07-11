@@ -37,11 +37,7 @@ Resonance Core I (0.8%) and II (0.5%) use a separate roll and may drop alongside
 
 Use any item in `#solsrelicsystem:aster_cores` in the top-center slot.
 
-<div class="recipe" aria-label="Aster Table crafting recipe">
-  <div class="recipe__slot">Book</div><div class="recipe__slot">Any Aster<br>Core</div><div class="recipe__slot">Book</div>
-  <div class="recipe__slot">Diamond</div><div class="recipe__slot">Anvil</div><div class="recipe__slot">Diamond</div>
-  <div class="recipe__slot">Diamond</div><div class="recipe__slot">Diamond</div><div class="recipe__slot">Diamond</div>
-</div>
+![Aster Table crafting recipe](../assets/images/recipes/aster-table.png){ .recipe-image }
 
 Place and use the table. It has two progression inputs: relic on the left and material on the right. Your armor slots and inventory remain visible for convenient gear management.
 
@@ -72,4 +68,3 @@ Milestone results are calculated from the relic's stored seed and level. Closing
 - An unwanted leveled item can be converted into Tier III cores with `/srs recycle`.
 
 <div class="build-callout"><strong>Best early rule:</strong> choose the relic for its main stat and sub-stat types first. Values and upgrade distribution matter later; types are the hardest part to change.</div>
-

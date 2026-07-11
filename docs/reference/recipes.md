@@ -1,77 +1,46 @@
 # Recipe compendium
 
-All layouts below come from v1.55 recipe JSON. Patterns are shaped and must match the shown 3×3 grid.
+Every recipe is shaped: place each ingredient in the exact slot shown.
 
 ## Aster Table
 
-```text
-Book          Any Aster Core   Book
-Diamond       Anvil            Diamond
-Diamond       Diamond          Diamond
-```
+![Aster Table crafting recipe](../assets/images/recipes/aster-table.png){ .recipe-image }
+
+The top-center slot accepts any Aster Core tier.
 
 ## Dust of Enlightenment
 
-```text
-Resonance V   Resonance V      Resonance V
-Resonance V   Feather          Resonance V
-Resonance V   Resonance V      Resonance V
-```
+![Dust of Enlightenment crafting recipe](../assets/images/recipes/dust-of-enlightenment.png){ .recipe-image }
 
 Cost: 8 Resonance Core V + 1 Feather → 1 Dust.
 
 ## Resonance Core I
 
-```text
-Aster III     Aster II         Aster III
-Aster II      Nether Star      Aster II
-Aster III     Aster II         Aster III
-```
+![Resonance Core I crafting recipe](../assets/images/recipes/resonance-core-i.png){ .recipe-image }
 
 ## Resonance Core II
 
-```text
-Aster III     Aster II         Aster III
-Aster II      Resonance I      Aster II
-Aster III     Aster II         Aster III
-```
+![Resonance Core II crafting recipe](../assets/images/recipes/resonance-core-ii.png){ .recipe-image }
 
 ## Resonance Core III
 
-```text
-Aster III     Aster II         Aster III
-Aster II      Resonance II     Aster II
-Aster III     Aster II         Aster III
-```
+![Resonance Core III crafting recipe](../assets/images/recipes/resonance-core-iii.png){ .recipe-image }
 
 ## Resonance Core IV
 
-```text
-Resonance I   Aster II         Resonance I
-Aster II      Resonance III    Aster II
-Resonance I   Aster II         Resonance I
-```
+![Resonance Core IV crafting recipe](../assets/images/recipes/resonance-core-iv.png){ .recipe-image }
 
 ## Resonance Core V
 
-```text
-Aster I       Resonance III    Aster I
-Resonance II  Nether Star      Resonance IV
-Aster I       Resonance I      Aster I
-```
+![Resonance Core V crafting recipe](../assets/images/recipes/resonance-core-v.png){ .recipe-image }
 
 ## Resonance Core VI
 
-```text
-Aster I       Dust             Aster I
-Resonance V   Aster II         Resonance V
-Aster I       Dust             Aster I
-```
+![Resonance Core VI crafting recipe](../assets/images/recipes/resonance-core-vi.png){ .recipe-image }
 
 !!! warning "Core VI exact Dust count"
     The shaped pattern contains Dust in two positions, so it consumes **2 Dust**, not four. It also consumes 4 Tier I Aster Cores, 1 Tier II Aster Core, and 2 Resonance Core V.
 
-## Datapack note
+## Server customization
 
-Recipes use namespaced IDs except the Aster Table's top-center `#solsrelicsystem:aster_cores` tag. Replacing recipe JSON is possible through normal datapack precedence, but the Aster Table material slot still recognizes only actual Aster Core, Dust, and Resonance Core item classes.
-
+Server owners can replace these recipes with a datapack. The Aster Table itself still accepts only Aster Cores, Dust of Enlightenment, and Resonance Cores as upgrade materials.
