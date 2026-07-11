@@ -61,7 +61,7 @@ This prevents save-scumming. The only supported way to redistribute finished mil
 
 ## Relic EXP calculator
 
-Enter the relic's current stored EXP shown in its tooltip. This calculator uses the v1.55 defaults.
+Enter the level and stored EXP shown in the relic tooltip, then choose where you want to stop. Results update as you type and use the v1.55 default XP curve.
 
 <div class="calculator" data-relic-xp-calculator>
   <div class="calculator__grid">
@@ -71,8 +71,11 @@ Enter the relic's current stored EXP shown in its tooltip. This calculator uses 
     <label>Core type<select name="core_xp"><option value="500">Tier I · 500 EXP</option><option value="200">Tier II · 200 EXP</option><option value="80" selected>Tier III · 80 EXP</option></select></label>
     <button type="button">Calculate</button>
   </div>
-  <div class="calculator__result" data-result></div>
+  <div class="calculator__result" data-result role="status" aria-live="polite"></div>
 </div>
+
+!!! tip "Reading the result"
+    The calculator estimates raw core value. The Aster Table can consume fewer cores when it intentionally stops at the next useful milestone, so always treat the in-game preview as the final authority.
 
 ## Upgrade safety
 

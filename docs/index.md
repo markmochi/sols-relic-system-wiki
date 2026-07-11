@@ -43,14 +43,42 @@ hide:
 
 ## The progression loop
 
-![Relic progression from discovery through ascension](assets/images/progression-loop.svg){ .game-shot }
+Follow one relic through six decisions. You do not need to learn the endgame systems before making your first upgrade.
 
-1. **Acquire compatible gear.** Rarity comes from Sol's Item Rarity; relic data is assigned by Sol's Relic System.
-2. **Inspect the starting roll.** Every relic has one slot-based main stat and rarity-dependent starting sub-stats.
-3. **Spend Aster Cores.** Each core adds Relic EXP at the Aster Table.
-4. **Reach milestones.** Default milestones at +4, +8, +12, +16, +20, and +24 add a missing sub-stat or upgrade one existing sub-stat.
-5. **Finish or recycle.** Keep a strong max-level relic, reroll its upgrade distribution with Dust, ascend it, or recycle an unwanted leveled relic.
-6. **Build around equipment.** Material multipliers, set bonuses, speed caps, offhand efficiency, and phantom overrides determine the effective result.
+<div class="guide-flow guide-flow--progression" aria-label="Six steps in relic progression">
+  <div class="guide-step">
+    <span class="guide-step__number">1</span>
+    <img class="guide-step__image" src="assets/images/pixel-diamond-sword.png" alt="Pixel-art diamond sword">
+    <div><strong>Acquire</strong><span>Find compatible gear with a rarity.</span></div>
+  </div>
+  <div class="guide-step">
+    <span class="guide-step__number">2</span>
+    <span class="guide-step__symbol guide-step__symbol--stats" aria-hidden="true">ATK%</span>
+    <div><strong>Inspect</strong><span>Check the main stat and starting sub-stats.</span></div>
+  </div>
+  <div class="guide-step">
+    <span class="guide-step__number">3</span>
+    <span class="item-sprite item-sprite--t2 guide-step__sprite" aria-hidden="true"></span>
+    <div><strong>Level</strong><span>Spend Aster Cores at the Aster Table.</span></div>
+  </div>
+  <div class="guide-step">
+    <span class="guide-step__number">4</span>
+    <span class="guide-step__symbol guide-step__symbol--milestone" aria-hidden="true">+4</span>
+    <div><strong>Reach milestones</strong><span>Add a sub-stat or upgrade an existing one.</span></div>
+  </div>
+  <div class="guide-step">
+    <span class="guide-step__number">5</span>
+    <span class="item-sprite item-sprite--dust guide-step__sprite" aria-hidden="true"></span>
+    <div><strong>Finish the relic</strong><span>Keep, reroll, ascend, or recycle it.</span></div>
+  </div>
+  <div class="guide-step">
+    <span class="guide-step__number">6</span>
+    <span class="guide-step__symbol guide-step__symbol--build" aria-hidden="true">4/4</span>
+    <div><strong>Build around it</strong><span>Combine effective stats, materials, and set bonuses.</span></div>
+  </div>
+</div>
+
+<p class="flow-next"><strong>New player?</strong> Stop after step 3 for now. The <a href="getting-started/quick-start/">five-minute guide</a> walks through that first upgrade.</p>
 
 !!! info "Default settings"
     Values shown throughout the guide use Sol's Relic System v1.55 defaults. Server configuration can change drop rates, XP, caps, eligible items, armor sets, and other balance settings.

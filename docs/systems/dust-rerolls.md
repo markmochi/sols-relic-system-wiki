@@ -2,89 +2,123 @@
 
 <div class="gallery-row"><div class="item-frame"><div class="item-sprite item-sprite--dust"></div><small>Dust of Enlightenment</small></div></div>
 
-Dust is an endgame redistribution tool. It does **not** roll a new stat set.
+Dust is an endgame **upgrade-point redistributor**. It keeps the relic and its stat types, but gives the milestone points a new arrangement.
 
-![Dust reroll decision flow](../assets/images/reroll-flow.svg){ .game-shot }
+## What one Dust attempt does
 
-## Eligible relics
+<div class="dust-summary">
+  <div><strong>Stays the same</strong><span>Relic, rarity, level, main stat, sub-stat types, and total upgrade points</span></div>
+  <div><strong>Can change</strong><span>How many milestone points each existing sub-stat receives</span></div>
+  <div><strong>Always spent</strong><span>One Dust and one reroll count, whether you keep the old or new result</span></div>
+</div>
 
-- Epic rarity or higher
-- At the rarity's maximum relic level
-- Has at least one sub-stat
-- Standard/supported special-relic reroll behavior
-- Used in survival; the flow rejects Creative mode
+<div class="dust-flow" aria-label="Four steps in a Dust of Enlightenment reroll">
+  <div class="dust-step">
+    <b>1</b>
+    <div><strong>Validate relic</strong><span>Max-level Epic or better with at least one sub-stat</span></div>
+  </div>
+  <div class="dust-step dust-step--commit">
+    <b>2</b>
+    <span class="item-sprite item-sprite--dust" aria-hidden="true"></span>
+    <div><strong>Commit Dust</strong><span>The Dust is reserved for this attempt</span></div>
+  </div>
+  <div class="dust-step dust-step--compare">
+    <b>3</b>
+    <div>
+      <strong>Redistribute</strong>
+      <span class="dust-allocation dust-allocation--old">Old: ATK% +3 · Luck +1</span>
+      <span class="dust-allocation dust-allocation--new">New: Crit +2 · ATK% +1 · HP% +1</span>
+      <small>Both arrangements contain the same 4 points.</small>
+    </div>
+  </div>
+  <div class="dust-step dust-step--choose">
+    <b>4</b>
+    <div><strong>Choose</strong><span><em>Keep New</em> or <em>Keep Old</em></span></div>
+  </div>
+</div>
 
-## What is redistributed
+<p class="dust-warning"><strong>Important:</strong> both choices consume the Dust and increase the reroll count. <strong>Keep Old</strong> protects the relic's stats, not the resource or pity progress.</p>
 
-The reroll counts all upgrade points across the relic's sub-stats, then generates a new allocation with the exact same total.
+??? info "Eligibility checklist"
+    A Dust attempt requires all of the following:
 
-```text
-old: Crit DMG +0 | ATK% +3 | HP% +0 | Luck +1   (4 points)
-new: Crit DMG +2 | ATK% +1 | HP% +1 | Luck +0   (4 points)
-```
+    - Epic rarity or higher
+    - Maximum level for the current rarity
+    - At least one sub-stat
+    - Standard or supported special-relic reroll behavior
+    - Survival mode; Creative mode is rejected
 
-For each stat:
+## A concrete example
 
-- if its new upgrade count equals its old count, its numeric value is unchanged;
-- if the count changes, value scales proportionally:
+Only existing milestone points move. Dust does not invent a fifth stat or replace a bad stat type.
 
-```text
-new value = old value × (new upgrades + 1) / (old upgrades + 1)
-```
+| Existing sub-stat | Before | New result |
+|---|---:|---:|
+| Crit DMG | +0 | +2 |
+| ATK% | +3 | +1 |
+| HP% | +0 | +1 |
+| Luck | +1 | +0 |
+| **Total points** | **4** | **4** |
 
-Therefore Dust preserves main stat, sub-stat types, level, rarity, and the total number of milestone points. It changes where those points live.
+If you choose **Keep New**, the right column becomes permanent. If you choose **Keep Old**, the left column is restored.
 
-## Pity system
+??? note "How the numeric values are recalculated"
+    When a stat keeps the same upgrade count, its numeric value stays unchanged. When its count changes, the value scales proportionally:
 
-Default threshold: every **5th completed reroll** on the same relic.
+    ```text
+    new value = old value × (new upgrades + 1) / (old upgrades + 1)
+    ```
 
-On a pity attempt, the UI lets you select two sub-stats. Guaranteed points are randomly split between those two before all remaining points are distributed across every sub-stat.
+    This preserves the stat's underlying roll quality while moving milestone power between existing stat types.
 
-| Rarity | Guaranteed selected-stat points |
+## Pity attempt
+
+Every **5th completed reroll** on the same relic is a pity attempt. The UI lets you select two preferred sub-stats. Guaranteed points are randomly split between those two first; any remaining points are then distributed across all sub-stats.
+
+| Rarity | Guaranteed points shared by the selected stats |
 |---|---:|
-| Epic | up to 2 |
-| Legendary | up to 3 |
-| Mythical | up to 3 |
-| Supreme | up to 3 |
+| Epic | Up to 2 |
+| Legendary | Up to 3 |
+| Mythical | Up to 3 |
+| Supreme | Up to 3 |
 
-“Up to” matters: a relic cannot guarantee more points than it possesses in total.
+"Up to" matters: the pity system cannot guarantee more points than the relic has in total.
 
-## Keep New versus Keep Old
+## Keep New or Keep Old
 
-After the roll, the overlay compares both versions. Either choice returns a relic:
+- **Keep New:** save the redistributed counts and values.
+- **Keep Old:** restore the exact pre-attempt stat arrangement.
 
-- **Keep New:** saves the redistributed counts/values.
-- **Keep Old:** restores the original stats.
-
-Both choices consume one Dust and increment the relic's reroll counter because the attempt occurred. Keeping Old still advances toward the next pity attempt.
+Both complete the attempt, consume one Dust, and advance the fifth-reroll pity counter.
 
 ## Safety behavior
 
-Inputs are consumed before the result is offered, while the server keeps copies of the original relic and Dust. If computation fails or the player disconnects before choosing, recovery returns both. If inventory is full after a choice, the relic drops at the player rather than disappearing.
+The server keeps recovery copies of the original relic and Dust while the choice screen is open. If computation fails or the player disconnects before choosing, both are returned. After a choice, a full inventory causes the relic to drop at the player instead of disappearing.
 
-## Sources
+## Getting Dust
 
-### Default mob rates
+??? info "Default mob and chest rates"
+    **Direct player-kill drops**
 
-| Mob | Chance on direct player kill |
-|---|---:|
-| Ender Dragon | 8% |
-| Warden | 5% |
-| Wither | 3% |
-| Elder Guardian | 2% |
-| Ravager | 1% |
-| Piglin Brute | 0.5% |
-| Vindicator | 0.5% |
+    | Mob | Chance |
+    |---|---:|
+    | Ender Dragon | 8% |
+    | Warden | 5% |
+    | Wither | 3% |
+    | Elder Guardian | 2% |
+    | Ravager | 1% |
+    | Piglin Brute | 0.5% |
+    | Vindicator | 0.5% |
 
-### Default chest rates
+    **Chest loot**
 
-| Category | Chance |
-|---|---:|
-| Common vanilla | 1% |
-| Rare vanilla | 3% |
-| Modded chest namespace | 3% |
-| Ancient City / ice box | 5% |
-| End City treasure | 7% |
+    | Category | Chance |
+    |---|---:|
+    | Common vanilla | 1% |
+    | Rare vanilla | 3% |
+    | Modded chest namespace | 3% |
+    | Ancient City / ice box | 5% |
+    | End City treasure | 7% |
 
 ### Crafting
 
@@ -92,10 +126,10 @@ Inputs are consumed before the result is offered, while the server keeps copies 
 
 One Dust can be crafted with **eight Resonance Core V** around a feather, making it a deliberately expensive endgame recipe.
 
-## Spending advice
+## Before spending Dust
 
-1. Never use Dust to fix bad stat types—it cannot.
-2. Ascend first if ascension is planned; it clears upgrade counts.
-3. A relic with more milestone points gives Dust more meaningful distributions.
+1. Do not use Dust to fix bad stat types; it cannot replace them.
+2. Ascend first when ascension is planned, because ascension clears upgrade counts.
+3. More milestone points create more meaningful possible distributions.
 4. Time the fifth attempt for two stats you are happy to receive.
-5. Judge the actual effective values, not only the +N dots.
+5. Compare effective values, not only the `+N` point counts.

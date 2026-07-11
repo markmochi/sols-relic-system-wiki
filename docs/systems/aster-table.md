@@ -6,9 +6,9 @@ The Aster Table is the central workstation. The material placed in its right slo
 
 | Right-slot material | Operation |
 |---|---|
-| Aster Core I–III | Add Relic EXP and process crossed milestones |
-| Dust of Enlightenment | Reroll a finished relic's upgrade-point distribution |
-| Resonance Core I–VI | Raise a max-level relic one matching rarity step |
+| Aster Core I-III | Add Relic EXP and process crossed milestones |
+| Dust of Enlightenment | Redistribute a finished relic's upgrade points |
+| Resonance Core I-VI | Raise a max-level relic one matching rarity step |
 
 ## Crafting
 
@@ -18,42 +18,60 @@ The top-center ingredient is the tag `solsrelicsystem:aster_cores`; datapacks ma
 
 ## Screen layout
 
-![Guide to the Aster Table interface](../assets/images/aster-table-ui.svg){ .game-shot }
+Read the table from left to right: **relic + material = previewed operation**.
 
-- **Relic slot:** accepts an eligible relic candidate.
-- **Material slot:** accepts only Aster Cores, Dust, or Resonance Cores.
-- **Equipment strip:** exposes equipped armor/offhand positions for management.
-- **Preview area:** shows current → result levels and effective stat changes before commitment.
-- **Confirmation overlay:** blocks unrelated input until accepted or canceled.
+<div class="aster-interface" role="img" aria-label="Aster Table screen with relic slot, material slot, and upgrade preview">
+  <div class="aster-interface__title"><strong>ASTER TABLE</strong><span>Relic forging interface</span></div>
+  <div class="aster-interface__work">
+    <div class="aster-interface__slots">
+      <div class="aster-slot">
+        <span>1 · Relic</span>
+        <div class="aster-slot__box"><img src="../../assets/images/pixel-diamond-sword.png" alt="Pixel-art diamond sword relic"></div>
+        <small>The gear being changed</small>
+      </div>
+      <span class="aster-interface__operator" aria-hidden="true">+</span>
+      <div class="aster-slot">
+        <span>2 · Material</span>
+        <div class="aster-slot__box"><span class="item-sprite item-sprite--t3" aria-hidden="true"></span><b>16</b></div>
+        <small>The operation selector</small>
+      </div>
+    </div>
+    <div class="aster-preview">
+      <span class="aster-preview__label">3 · Server preview</span>
+      <strong>Legendary Netherite Sword</strong>
+      <div class="aster-preview__change"><span>Level</span><b>+12 to +16</b></div>
+      <div class="aster-preview__change"><span>Crit Rate</span><b>23.0% to 28.9%</b></div>
+      <div class="aster-preview__cost">13 Aster Core I · 6,370 EXP</div>
+      <small>Review this result before confirming.</small>
+    </div>
+  </div>
+  <div class="aster-interface__inventory"><span>Equipment</span><i></i><i></i><i></i><i></i><i></i><span>Inventory stays available below the operation</span></div>
+</div>
 
-Shift-click routing prefers the material slot for recognized materials, the relic slot for eligible gear, then appropriate equipment/inventory slots.
+<div class="screen-key">
+  <div><b>1</b><span><strong>Choose the relic.</strong> Eligible gear goes in the left slot.</span></div>
+  <div><b>2</b><span><strong>Choose the action.</strong> Aster Core levels, Dust rerolls, and Resonance Core ascends.</span></div>
+  <div><b>3</b><span><strong>Trust the preview.</strong> The server shows the exact cost and result before anything is consumed.</span></div>
+</div>
 
-## Leveling behavior
+The confirmation overlay appears only after the preview is accepted. While it is open, unrelated table input is locked so the operation cannot change underneath the confirmation.
 
-For Aster Cores, the table finds the smallest useful number of cores, previews deterministic milestone steps, and asks for confirmation. On success it puts an upgraded copy into inventory and consumes only that many cores. If more cores can fund another level, Upgrade Again starts the next cycle.
+Shift-click routing prefers the material slot for recognized materials, the relic slot for eligible gear, then appropriate equipment or inventory slots.
 
-## Ascension behavior
+## What each material does
 
-A Resonance Core preview compares old and target rarity, current/max level, and every stat before versus the new +0 state. The server verifies the relic, core level, snapshots, stable seed, and inventory capacity again on confirmation.
+=== "Aster Core"
 
-## Reroll behavior
+    The table finds the smallest useful number of cores, previews deterministic milestone steps, and asks for confirmation. It consumes only the displayed count. If the remaining cores can fund another level, **Upgrade Again** starts the next cycle.
 
-Dust opens a two-stage flow:
+=== "Resonance Core"
 
-1. confirm consumption and any pity selections;
-2. watch the result, compare Old versus New, and choose one.
+    The preview compares old and target rarity, current and maximum level, and every affected stat. On confirmation, the server verifies the relic, matching core level, stable seed, and inventory capacity again.
 
-The server holds recovery copies during the choice phase. Disconnect recovery returns the original relic and consumed Dust.
+=== "Dust"
+
+    Dust opens a two-stage flow: confirm the attempt, then compare the old and redistributed upgrade points. The server holds recovery copies until the player chooses **Keep Old** or **Keep New**.
 
 ## Physical properties
 
-The Aster Table has:
-
-- 2.5 hardness and 6 blast resistance;
-- stone sound;
-- light level 8;
-- a custom non-full-cube collision shape;
-- cyan/gold ambient particles;
-- horizontal facing based on placement.
-
-It requires the correct tool for drops.
+The Aster Table has 2.5 hardness, 6 blast resistance, stone sound, light level 8, a custom collision shape, cyan/gold ambient particles, and horizontal facing based on placement. It requires the correct tool for drops.
