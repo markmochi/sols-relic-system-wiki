@@ -13,6 +13,7 @@ hide:
     <div class="relic-hero__actions">
       <a class="relic-button" href="getting-started/quick-start/">Begin the first relic →</a>
       <a class="relic-button relic-button--ghost" href="relics/optimization/">Buildcrafting guide</a>
+      <a class="relic-button relic-button--ghost" href="changelog/">Release timeline</a>
     </div>
   </div>
   <div class="hero-relics" aria-label="Relic materials from the mod">
@@ -29,6 +30,15 @@ hide:
   <div class="relic-card relic-card--gold"><div class="relic-card__kicker">Endgame</div><h3>Ascend rarity</h3><p>Raise a max-level relic one rarity at a time with the matching Resonance Core.</p><p><a href="systems/ascension/">Master ascension →</a></p></div>
   <div class="relic-card relic-card--purple"><div class="relic-card__kicker">Buildcrafting</div><h3>Control the odds</h3><p>Know which rolls can change, which are permanent, and when Dust is worth spending.</p><p><a href="relics/optimization/">Roll better relics →</a></p></div>
   <div class="relic-card relic-card--green"><div class="relic-card__kicker">Server owners</div><h3>Tune the whole loop</h3><p>Control eligible items, mob lists, drop chances, XP, caps, sets, and cross-mod balance.</p><p><a href="admin/configuration/">Open the admin manual →</a></p></div>
+</div>
+
+## Release timeline
+
+<div class="relic-card relic-card--gold release-preview">
+  <div class="relic-card__kicker">Latest release · July 11, 2026</div>
+  <h3>Sol's Relic System v1.55</h3>
+  <p>Adds <code>relic_whitelist.json</code>, letting server owners opt otherwise-unrecognized modded equipment into relic stat rolls while preserving blacklist priority.</p>
+  <p><a href="changelog/">Explore every release from v1.5 →</a></p>
 </div>
 
 ## The progression loop

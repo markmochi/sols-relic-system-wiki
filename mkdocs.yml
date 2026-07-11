@@ -68,6 +68,7 @@ extra:
 
 nav:
   - Field Guide: index.md
+  - Changelog: changelog.md
   - Start Here:
       - Installation: getting-started/installation.md
       - Five-minute start: getting-started/quick-start.md

@@ -100,7 +100,8 @@ body {
 }
 .version-rail span { white-space: nowrap; }
 .version-rail b { color: var(--relic-cyan); font-weight: 600; }
-.version-rail__label { color: var(--relic-gold); font-weight: 800; }
+.version-rail__label { color: var(--relic-gold); font-weight: 800; white-space:nowrap; }
+.version-rail__label:hover { color:#ffe4a0; }
 
 .relic-hero {
   position: relative;
@@ -205,6 +206,52 @@ body {
 .relic-card p:last-child { margin-bottom:0; }
 .relic-card__kicker { color:var(--relic-cyan); font-size:.64rem; text-transform:uppercase; letter-spacing:.12em; }
 
+.release-preview { margin:1rem 0 1.6rem; }
+
+.release-timeline {
+  position:relative;
+  margin:1.5rem 0 2rem;
+  padding-left:2rem;
+}
+.release-timeline::before {
+  content:"";
+  position:absolute;
+  top:.5rem;
+  bottom:.5rem;
+  left:.42rem;
+  width:2px;
+  background:linear-gradient(var(--relic-gold),var(--relic-cyan),rgba(83,237,243,.12));
+  box-shadow:0 0 14px rgba(83,237,243,.2);
+}
+.release-entry {
+  position:relative;
+  margin:0 0 1.5rem;
+  padding:1.15rem 1.25rem;
+  border:1px solid rgba(83,237,243,.2);
+  background:linear-gradient(135deg,rgba(22,32,47,.94),rgba(9,15,24,.97));
+  box-shadow:0 14px 34px rgba(0,0,0,.24);
+}
+.release-entry::before {
+  content:"";
+  position:absolute;
+  top:1.3rem;
+  left:-1.94rem;
+  width:.72rem;
+  height:.72rem;
+  border:2px solid var(--relic-cyan);
+  border-radius:50%;
+  background:var(--relic-void);
+  box-shadow:0 0 12px rgba(83,237,243,.48);
+}
+.release-entry--latest { border-color:rgba(237,201,109,.38); }
+.release-entry--latest::before { border-color:var(--relic-gold);box-shadow:0 0 14px rgba(237,201,109,.52); }
+.release-entry__meta { display:flex;align-items:center;flex-wrap:wrap;gap:.45rem .75rem;margin-bottom:.2rem; }
+.release-entry__version { color:var(--relic-gold);font:800 1rem/1 Georgia,"Times New Roman",serif; }
+.release-entry__meta time { color:var(--relic-muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em; }
+.release-entry__badge { padding:.12rem .42rem;color:#071016;font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;background:var(--relic-gold); }
+.release-entry > h2 { margin-top:.65rem; }
+.release-entry > :last-child { margin-bottom:0; }
+
 .rarity { font-weight:800; }
 .rarity--common { color:#b7b7b7; }.rarity--uncommon { color:#63d879; }.rarity--rare { color:#58aef6; }
 .rarity--epic { color:#b578f0; }.rarity--legendary { color:#f0bd58; }.rarity--mythical { color:#f16f7b; }.rarity--supreme { color:#6ff5ee; text-shadow:0 0 8px rgba(111,245,238,.4); }
@@ -243,6 +290,8 @@ body {
 @media (max-width: 800px) {
   .relic-hero { grid-template-columns:1fr; min-height:0; }
   .hero-relics { max-width:22rem; }
+  .release-timeline { padding-left:1.35rem; }
+  .release-entry::before { left:-1.3rem; }
 }
 
 @media (prefers-reduced-motion:no-preference) {
