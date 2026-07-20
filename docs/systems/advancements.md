@@ -1,6 +1,6 @@
 # Resonance advancements
 
-Sol's Relic System v1.55 includes an advancement chain based on collecting its rare materials.
+Sol's Relic System v1.56 includes an advancement chain based on collecting its rare materials.
 
 | Advancement | Frame | Trigger |
 |---|---|---|

@@ -11,7 +11,55 @@ Follow the major additions, compatibility improvements, and fixes introduced in 
 
 <article class="release-entry release-entry--latest" markdown>
 
-<div class="release-entry__meta"><span class="release-entry__version">v1.55</span><time datetime="2026-07-11">July 11, 2026</time><span class="release-entry__badge">Latest</span></div>
+<div class="release-entry__meta"><span class="release-entry__version">v1.56</span><time datetime="2026-07">July 2026</time><span class="release-entry__badge">Latest</span></div>
+
+## Fixes and improvements
+
+Version 1.56 cleans up server configuration, improves multiplayer consistency, and corrects outdated wording throughout the mod. It is available for **Forge 1.16.5**, **Forge 1.20.1**, **NeoForge 1.21.1**, and **NeoForge 1.21.11**.
+
+### Download
+
+<p><a class="relic-button" href="https://www.curseforge.com/minecraft/mc-mods/sols-relic-system/files">Download v1.56 on CurseForge</a></p>
+
+### Configuration fix
+
+- Fixed an issue that could cause `solsrelicsystem-common.toml` to be rewritten during startup.
+
+### Cleaner common configuration
+
+The common config was reviewed across every supported Minecraft version. Settings that no longer controlled a feature were removed:
+
+- `asterCores.tier1AnvilCost`
+- `asterCores.tier2AnvilCost`
+- `asterCores.tier3AnvilCost`
+- `dustOfEnlightenment.dropChance`
+- `relicLock.enabled`
+
+Aster Cores are used through the **Aster Table** and do not cost vanilla XP levels. Dust drop configuration is now split clearly between:
+
+- mob-specific rates in `dust_of_enlightenment_mobs.json`;
+- category-specific chest rates in the `chestLoot.dust*Chance` settings.
+
+See the updated [server configuration reference](admin/configuration.md) and [mob and chest drop guide](admin/entity-drops.md).
+
+### Multiplayer consistency
+
+- The server now synchronizes its XP curve, sub-stat limit and milestone interval, offhand efficiency, and relic stat-scaling values to connected players.
+- Aster Table displays, relic tooltips, and the Stat Summary screen now reflect the server's actual balance settings.
+
+### Clearer wording
+
+- Replaced outdated references to leveling Aster Cores through an anvil with the Aster Table.
+- Clarified that the three Aster Core tier chances add together for the total drop chance.
+- Clarified that chest multipliers can also allow multi-core stacks.
+- Corrected descriptions for the XP curve, set bonuses, recycling, maximum sub-stats, Dust drops, and universal damage.
+- Corrected the default Stat Summary key from **R** to **I**.
+
+</article>
+
+<article class="release-entry" markdown>
+
+<div class="release-entry__meta"><span class="release-entry__version">v1.55</span><time datetime="2026-07-11">July 11, 2026</time></div>
 
 ## Relic compatibility whitelist
 

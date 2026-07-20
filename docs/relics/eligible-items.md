@@ -42,7 +42,7 @@ Qualified combat axes include names such as `battle_axe`, `waraxe`, `great-axe`,
 
 ## Utility tools are intentionally excluded
 
-The current v1.55 code detects utility behavior before accepting generic tags or attack damage. Normal instances of these are not relic weapons:
+The current v1.56 code detects utility behavior before accepting generic tags or attack damage. Normal instances of these are not relic weapons:
 
 - pickaxes and mining drills/hammers;
 - shovels and spades;

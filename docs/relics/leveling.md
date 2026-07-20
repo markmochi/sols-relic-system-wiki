@@ -4,7 +4,7 @@ Relics gain only **Relic EXP**, not player experience. Aster Cores are the suppo
 
 ## Default XP curve
 
-The current v1.55 code uses:
+The current v1.56 code uses:
 
 ```text
 XP for target level L = round(100 + 30L + 5L²)
@@ -61,7 +61,7 @@ This prevents save-scumming. The only supported way to redistribute finished mil
 
 ## Relic EXP calculator
 
-Enter the level and stored EXP shown in the relic tooltip, then choose where you want to stop. Results update as you type and use the v1.55 default XP curve.
+Enter the level and stored EXP shown in the relic tooltip, then choose where you want to stop. Results update as you type and use the v1.56 default XP curve.
 
 <div class="calculator" data-relic-xp-calculator>
   <div class="calculator__grid">

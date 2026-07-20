@@ -91,5 +91,4 @@ The named rare list includes bastion treasure, nether bridge, woodland mansion, 
 
 ## Migrations
 
-The config loader normalizes older whitelist/blacklist/entity-map schemas into the current formats and upgrades known older Dust defaults. Treat the rewritten current file as the new source of truth after starting v1.55.
-
+The config loader normalizes older whitelist/blacklist/entity-map schemas into the current formats and upgrades known older Dust defaults. Treat the rewritten current file as the new source of truth after starting v1.56.

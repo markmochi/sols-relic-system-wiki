@@ -52,4 +52,4 @@ Dust has a confirmation/pity-selection phase, animated redistribution, and an Ol
 `/srs recycle` shows the held relic and exact Tier III core refund. It does not destroy the item until confirmation and revalidation.
 
 !!! note "About relic locking"
-    In v1.55, the only available Sol's Relic System keybind is ++i++ for Stat Summary. Older references to an X-key relic lock do not apply to this version.
+    In v1.56, the only available Sol's Relic System keybind is ++i++ for Stat Summary. Older references to relic locking or an R/X key do not apply to this version.

@@ -2,14 +2,16 @@
 
 The common TOML controls global numbers and switches. JSON files handle entity lists, per-entity Dust chances, item inclusion/exclusion, and armor sets.
 
+Version 1.56 removed obsolete anvil-cost, fallback Dust-chance, and relic-lock settings. Aster Core leveling is handled entirely by the Aster Table, and the only Relic System keybind is the Stat Summary key.
+
 ## General
 
 | Key | Default | Meaning |
 |---|---:|---|
 | `general.enabled` | true | Master switch for relic behavior |
-| `general.showRelicTooltip` | true | Show relic stat tooltip section |
+| `general.showRelicTooltip` | true | Local client option: show relic stat tooltip section |
 | `general.showLevelInName` | true | Prefix item name with `+level` |
-| `general.showSetBonusesTooltip` | true | Show set section on armor tooltips |
+| `general.showSetBonusesTooltip` | true | Local client option: show set section on armor tooltips |
 
 ## Critical hits
 
@@ -26,24 +28,21 @@ The common TOML controls global numbers and switches. JSON files handle entity l
 | Key | Default | Meaning |
 |---|---:|---|
 | `asterCores.dropEnabled` | true | Enable Aster Core tier roll |
-| `tier1DropChance` | 1.0 | Tier I interval in combined roll |
-| `tier2DropChance` | 3.0 | Tier II interval |
-| `tier3DropChance` | 8.0 | Tier III interval |
+| `tier1DropChance` | 1.0 | Tier I chance per eligible mob; chest base before multiplier |
+| `tier2DropChance` | 3.0 | Tier II chance per eligible mob; chest base before multiplier |
+| `tier3DropChance` | 8.0 | Tier III chance per eligible mob; chest base before multiplier |
 | `tier1XP` | 500 | Relic EXP per Tier I |
 | `tier2XP` | 200 | Relic EXP per Tier II |
 | `tier3XP` | 80 | Relic EXP per Tier III / recycle conversion unit |
-| `tier1AnvilCost` | 5 | Compatibility/legacy anvil-level setting |
-| `tier2AnvilCost` | 3 | Compatibility/legacy anvil-level setting |
-| `tier3AnvilCost` | 1 | Compatibility/legacy anvil-level setting |
 
-The current supported leveling UI is the Aster Table and its handler does not charge vanilla player levels.
+The three tier chances add together for the total chance of receiving any Aster Core. At defaults, that is **12%** per eligible mob. The Aster Table does not charge vanilla player levels.
 
 ## Leveling
 
-| Key | Default | Range |
+| Key | Default | Range / meaning |
 |---|---:|---:|
-| `leveling.baseXPPerLevel` | 50 | 1–10,000 |
-| `leveling.xpScalingFactor` | 0.25 | 0–5 |
+| `leveling.baseXPPerLevel` | 50 | Base value used by the curve; the default first level costs 135 EXP |
+| `leveling.xpScalingFactor` | 0.25 | Quadratic growth factor; 0 disables quadratic growth |
 | `leveling.subStatUpgradeInterval` | 4 | 1–10 levels |
 
 Changing the interval changes both milestone detection and the UI's crossed-milestone count. Rarity caps remain hardcoded at 4/4/9/12/16/20/24.
@@ -52,11 +51,10 @@ Changing the interval changes both milestone detection and the UI's crossed-mile
 
 | Key | Default | Meaning |
 |---|---:|---|
-| `dustOfEnlightenment.dropEnabled` | true | Enable Dust mob/chest injection |
-| `dustOfEnlightenment.dropChance` | 3.0 | Fallback/legacy chest chance—not mob rate |
+| `dustOfEnlightenment.dropEnabled` | true | Enable configured mob and chest drops; when false, only commands/Creative remain |
 | `dustOfEnlightenment.pityThreshold` | 5 | Every Nth reroll; 0 disables pity |
 
-Mob chances are only in `dust_of_enlightenment_mobs.json`. Primary chest categories use the direct values below.
+Mob-specific chances are configured only in `dust_of_enlightenment_mobs.json`. Chest categories use the direct `chestLoot.dust*Chance` values below.
 
 ## Chest loot
 
@@ -74,13 +72,13 @@ Mob chances are only in `dust_of_enlightenment_mobs.json`. Primary chest categor
 | `dustEndCityChance` | 7.0% |
 | `dustModdedChance` | 3.0% |
 
-Aster values are multipliers over the tier chances; Dust values are direct final percentages.
+Aster values are multipliers over the tier chances. Higher multipliers can also allow multi-core stacks. Dust values are direct final percentages.
 
 ## Balance
 
 | Key | Default | Meaning |
 |---|---:|---|
-| `balance.maxSubStats` | 4 | 1–8; affects assignment, ascension, milestones |
+| `balance.maxSubStats` | 4 | Maximum generated sub-stats; lowering it does not delete saved stats |
 | `balance.critSubStatWeightMultiplier` | 0.5 | Crit type selection weight multiplier |
 | `balance.offhandStatEfficiency` | 0.5 | Offhand and offhand-phantom effectiveness |
 | `balance.maxAtkSpeedBonus` | 25.0 | Total relic ATK Speed cap |
@@ -105,10 +103,9 @@ All accept 0.1–2.0. They affect displayed effective values and applied stats.
 
 | Key | Default | Meaning |
 |---|---:|---|
-| `setBonuses.enabled` | true | Calculate material/custom set bonuses |
-| `relicLock.enabled` | true | Compatibility setting; see interface note |
-| `recycling.enabled` | true | Allow `/srs recycle` |
-| `recycling.refundPercent` | 60.0 | Invested EXP returned before Tier III conversion |
+| `setBonuses.enabled` | true | Enable material/custom 2-piece and 4-piece bonuses |
+| `recycling.enabled` | true | Let `/srs recycle` convert an upgraded held relic into Tier III Aster Cores |
+| `recycling.refundPercent` | 60.0 | Invested EXP refunded as the Tier III core equivalent |
 | `crossMod.disableRarityStatBonuses` | true | Prevent Item Rarity attribute stacking |
 
 ## Phantom slots
@@ -132,9 +129,13 @@ Valid anchors: `HOTBAR_LEFT`, `HOTBAR_RIGHT`, `TOP_LEFT`, `TOP_RIGHT`, `BOTTOM_L
 | `universalDamage.flatEfficiency` | 0.75 |
 | `universalDamage.percentEfficiency` | 0.75 |
 
+When enabled, ATK and ATK% contribute to supported non-melee damage when the owning player can be resolved, including direct player damage, projectiles, and supported tameable summons. The efficiency values scale the flat and percentage contributions for those non-melee sources.
+
 ## Reload strategy
 
-Use `/srs reload` for the generated JSON files. Common TOML values are synchronized to clients during login/config sync; a server restart is the least ambiguous way to apply broad TOML changes.
+Use `/srs reload` for the generated JSON files. A server restart is the least ambiguous way to apply broad TOML changes.
+
+The server synchronizes the XP curve, milestone interval, maximum sub-stats, offhand efficiency, and stat-scaling values to connected players. Aster Table previews, relic tooltips, and Stat Summary therefore use the server's balance rather than stale client defaults.
 
 !!! danger "Back up before changing live progression"
     XP costs, core XP, max sub-stats, and refund values affect existing items and future operations. Test changes on copies of real relics before deploying them to a production server.

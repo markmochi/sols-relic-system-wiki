@@ -2,7 +2,7 @@
 
 ## My pickaxe/axe does not receive relic stats
 
-Normal utility tools are excluded by current v1.55 detection. A combat-qualified axe name may work, while an ordinary axe does not. Add the exact item ID to `relic_whitelist.json` if the server wants it eligible.
+Normal utility tools are excluded by current v1.56 detection. A combat-qualified axe name may work, while an ordinary axe does not. Add the exact item ID to `relic_whitelist.json` if the server wants it eligible.
 
 ## I reloaded but the next milestone stayed the same
 

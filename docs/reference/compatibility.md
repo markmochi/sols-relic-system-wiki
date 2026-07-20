@@ -2,9 +2,19 @@
 
 ## Required integration: Sol's Item Rarity
 
-Relic System calls Item Rarity for display rarity, rarity pools, fixed-rarity rules, set-ID rules, and stored rarity changes during ascension. Version 1.7 or newer is declared as mandatory.
+Relic System calls Item Rarity for display rarity, rarity pools, fixed-rarity rules, set-ID rules, and stored rarity changes during ascension. Version 1.71 or newer is declared as mandatory.
 
 By default, `disableRarityStatBonuses = true` tells the companion rarity mod not to stack its own rarity attribute bonuses on top of relic stats. Disable this safeguard only when intentionally balancing both systems together.
+
+### Protected modded tools
+
+Relic System also follows Item Rarity's `toolCompatibilityBlacklist` from `utility_buffs.json`. For a matching tool:
+
+- Durability% is removed from the main-stat roll pool;
+- the Relic durability handler does not rewrite durability loss;
+- other eligible Relic stats continue to work normally.
+
+Item Rarity includes `tconstruct` by default. Server owners can add a whole mod with `modid` or `modid:*`, or protect one tool with `modid:item_id`.
 
 ## Weapon compatibility
 
@@ -38,4 +48,3 @@ The crit handler exposes recent crit information—multiplier, rate, Crit DMG, o
 ## Special relic API
 
 `SpecialRelicItem` allows an integrated item to supply custom max level, relic initialization, XP behavior, preview lines, material-tier behavior, Dust permission, and related display rules. Standard guide values apply unless that item's integration deliberately overrides them.
-

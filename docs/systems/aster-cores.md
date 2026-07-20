@@ -60,7 +60,7 @@ For each chest loot table, default Aster chances are multiplied by category:
 When a chest core pool succeeds, the tier is selected with weights proportional to its multiplied chance. The rare category includes bastion treasure, nether bridge, woodland mansion, stronghold library, buried treasure, and the listed normal/ominous Trial Chamber reward tables.
 
 !!! note
-    On some loader versions the injection implementation differs (loot-table event versus global modifiers), but the v1.55 configuration intent and documented category defaults are shared.
+    On some loader versions the injection implementation differs (loot-table event versus global modifiers), but the v1.56 configuration intent and documented category defaults are shared.
 
 ## Best farming approach
 

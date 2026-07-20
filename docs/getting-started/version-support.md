@@ -1,6 +1,6 @@
 # Version support
 
-This guide covers Sol's Relic System v1.55 on four supported Minecraft and mod-loader combinations. The relic progression, stats, items, interfaces, and balance defaults described throughout the guide apply to all four.
+This guide covers Sol's Relic System v1.56 on four supported Minecraft and mod-loader combinations. The relic progression, stats, items, interfaces, and balance defaults described throughout the guide apply to all four.
 
 | Minecraft | Loader | Guide coverage |
 |---|---|---|
@@ -26,13 +26,13 @@ Across all four supported versions, players receive the same:
 
 ## Important terminology
 
-**Minecraft version** is not the same as **mod version**. This guide describes **Sol's Relic System 1.55** running on any of the four Minecraft versions above.
+**Minecraft version** is not the same as **mod version**. This guide describes **Sol's Relic System 1.56** running on any of the four Minecraft versions above.
 
 When reporting a problem, include all four identifiers:
 
 ```text
 Minecraft: 1.21.1
 Loader: NeoForge 21.1.x
-Sol's Relic System: 1.55
-Sol's Item Rarity: 1.7 or newer
+Sol's Relic System: 1.56
+Sol's Item Rarity: 1.71 or newer
 ```
