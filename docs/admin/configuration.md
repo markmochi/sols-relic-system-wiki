@@ -2,7 +2,7 @@
 
 The common TOML controls global numbers and switches. JSON files handle entity lists, per-entity Dust chances, item inclusion/exclusion, and armor sets.
 
-Version 1.56 removed obsolete anvil-cost, fallback Dust-chance, and relic-lock settings. Aster Core leveling is handled entirely by the Aster Table, and the only Relic System keybind is the Stat Summary key.
+Version 1.56 removed obsolete anvil-cost, fallback Dust-chance, and relic-lock settings. Version 1.57 adds a separate opt-in gate for Dust in modded structure loot. Aster Core leveling is handled entirely by the Aster Table, and the only Relic System keybind is the Stat Summary key.
 
 ## General
 
@@ -70,9 +70,12 @@ Mob-specific chances are configured only in `dust_of_enlightenment_mobs.json`. C
 | `dustRareChance` | 3.0% |
 | `dustAncientCityChance` | 5.0% |
 | `dustEndCityChance` | 7.0% |
+| `enableDustInModdedChests` | false |
 | `dustModdedChance` | 3.0% |
 
 Aster values are multipliers over the tier chances. Higher multipliers can also allow multi-core stacks. Dust values are direct final percentages.
+
+`enableDustInModdedChests` is disabled by default in v1.57 so ordinary barrels and chests added by structure mods cannot make this endgame reroll material common. When enabled, `dustModdedChance` becomes the final Dust percentage for qualifying non-`minecraft` chest loot tables. This gate does not disable Aster Core injection into modded chest tables.
 
 ## Balance
 

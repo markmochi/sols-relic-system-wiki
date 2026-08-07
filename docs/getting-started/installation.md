@@ -6,10 +6,10 @@ Sol's Relic System requires the matching build of **Sol's Item Rarity 1.71 or ne
 
 | Minecraft | Loader | Minimum loader declared by code | Relic System | Required Item Rarity |
 |---|---|---:|---:|---:|
-| 1.16.5 | Forge | 36.2.0 | 1.56 | 1.71+ |
-| 1.20.1 | Forge | 47.0.0 | 1.56 | 1.71+ |
-| 1.21.1 | NeoForge | 21.1.1 | 1.56 | 1.71+ |
-| 1.21.11 | NeoForge | 21.11.42 | 1.56 | 1.71+ |
+| 1.16.5 | Forge | 36.2.0 | 1.57 | 1.71+ |
+| 1.20.1 | Forge | 47.0.0 | 1.57 | 1.71+ |
+| 1.21.1 | NeoForge | 21.1.1 | 1.57 | 1.71+ |
+| 1.21.11 | NeoForge | 21.11.42 | 1.57 | 1.71+ |
 
 !!! danger "Do not mix loaders"
     A Forge jar cannot run on NeoForge, and a jar for one Minecraft version cannot be reused on another. For example, both the Relic System and Item Rarity jars in a 1.21.1 instance must be their **1.21.1 NeoForge** builds.

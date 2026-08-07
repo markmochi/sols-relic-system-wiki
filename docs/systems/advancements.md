@@ -1,6 +1,16 @@
-# Resonance advancements
+# Advancements
 
-Sol's Relic System v1.56 includes an advancement chain based on collecting its rare materials.
+Sol's Relic System v1.57 includes a crafting advancement and a progression chain based on collecting its rare materials.
+
+## Aster Architect
+
+| Advancement | Frame | Trigger | Parent |
+|---|---|---|---|
+| Aster Architect | Task | Craft an Aster Table | Vanilla Story: Iron Tools |
+
+Crafting the table grants **Aster Architect**, shows its toast, and announces the achievement in chat. Merely obtaining or placing an Aster Table does not satisfy the requirement.
+
+## Resonance progression
 
 | Advancement | Frame | Trigger |
 |---|---|---|
@@ -13,7 +23,9 @@ Sol's Relic System v1.56 includes an advancement chain based on collecting its r
 | Fate, Rewritten | Challenge | Obtain Dust of Enlightenment |
 | Sixfold Sovereign | Challenge | Hold all six Resonance Core levels at once |
 
-All are visible, show a toast, and announce in chat. The chain tracks obtaining materials, not successfully performing the associated ascension or reroll.
+**First Spark of Resonance** is the visible root and supplies the advancement tree's proper background texture. The seven follow-up advancements stay hidden until their requirements are met. Every completed advancement shows a toast and announces in chat.
+
+The chain tracks obtaining materials, not successfully performing the associated ascension or reroll.
 
 <div class="gallery-row">
   <div class="item-frame"><div class="item-sprite item-sprite--r1"></div><small>First Spark</small></div>

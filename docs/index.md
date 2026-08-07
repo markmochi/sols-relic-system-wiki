@@ -35,9 +35,9 @@ hide:
 ## Release timeline
 
 <div class="relic-card relic-card--gold release-preview">
-  <div class="relic-card__kicker">Latest release · July 2026</div>
-  <h3>Sol's Relic System v1.56</h3>
-  <p>Cleans up obsolete configuration, fixes unwanted common-config rewrites, and keeps client displays aligned with the server's actual progression and stat balance.</p>
+  <div class="relic-card__kicker">Latest release · August 2026</div>
+  <h3>Sol's Relic System v1.57</h3>
+  <p>Fixes Jump Boost movement, advancement progression and presentation, Aster Table drops, modded-structure Dust balance, and SimplyTooltips compatibility.</p>
   <p><a href="changelog/">Explore every release from v1.5 →</a></p>
 </div>
 
@@ -81,7 +81,7 @@ Follow one relic through six decisions. You do not need to learn the endgame sys
 <p class="flow-next"><strong>New player?</strong> Stop after step 3 for now. The <a href="getting-started/quick-start/">five-minute guide</a> walks through that first upgrade.</p>
 
 !!! info "Default settings"
-    Values shown throughout the guide use Sol's Relic System v1.56 defaults. Server configuration can change drop rates, XP, caps, eligible items, armor sets, and other balance settings.
+    Values shown throughout the guide use Sol's Relic System v1.57 defaults. Server configuration can change drop rates, XP, caps, eligible items, armor sets, and other balance settings.
 
 ## What is covered
 

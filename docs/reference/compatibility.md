@@ -16,6 +16,12 @@ Relic System also follows Item Rarity's `toolCompatibilityBlacklist` from `utili
 
 Item Rarity includes `tconstruct` by default. Server owners can add a whole mod with `modid` or `modid:*`, or protect one tool with `modid:item_id`.
 
+## SimplyTooltips
+
+On Minecraft versions supported by SimplyTooltips, v1.57 keeps relic-bearing items on the native styled tooltip renderer. This prevents SimplyTooltips from flattening the individually colored Relic System and Item Rarity text components into broken-looking formatting.
+
+SimplyTooltips can still render ordinary items normally. Relic items may use the standard tooltip frame so their rarity colors, stat sections, separators, and progress display remain intact.
+
 ## Weapon compatibility
 
 The current detector supports native classes, loader tags, item abilities, attack attributes, class-name heuristics, and registry-name tokens. This covers many conventional modded weapons without a hard dependency.

@@ -11,7 +11,40 @@ Follow the major additions, compatibility improvements, and fixes introduced in 
 
 <article class="release-entry release-entry--latest" markdown>
 
-<div class="release-entry__meta"><span class="release-entry__version">v1.56</span><time datetime="2026-07">July 2026</time><span class="release-entry__badge">Latest</span></div>
+<div class="release-entry__meta"><span class="release-entry__version">v1.57</span><time datetime="2026-08-07">August 7, 2026</time><span class="release-entry__badge">Latest</span></div>
+
+## Gameplay, progression, loot, and tooltip fixes
+
+Version 1.57 fixes Jump Boost movement, advancement progression and presentation, Aster Table drops, Dust availability in modded structures, and SimplyTooltips compatibility. It is available for **Forge 1.16.5**, **Forge 1.20.1**, **NeoForge 1.21.1**, and **NeoForge 1.21.11**.
+
+### Downloads
+
+- [Forge 1.16.5](https://www.curseforge.com/minecraft/mc-mods/sols-relic-system/files/8595191)
+- [Forge 1.20.1](https://www.curseforge.com/minecraft/mc-mods/sols-relic-system/files/8595197)
+- [NeoForge 1.21.1](https://www.curseforge.com/minecraft/mc-mods/sols-relic-system/files/8595205)
+- [NeoForge 1.21.11](https://www.curseforge.com/minecraft/mc-mods/sols-relic-system/files/8595210)
+
+### Fixes
+
+Fixed Jump Boost causing a delayed second upward boost after jumping. Jump Boost now produces one smooth higher jump without a delayed second upward kick interrupting sprinting or combat movement.
+
+Fixed Relic System advancements being granted to players before meeting their requirements. Locked Relic System advancements now stay hidden until their required progression is reached.
+
+Fixed the Relic System advancement tree missing its background texture. Added a proper background to the Relic System advancement tree, replacing the purple-and-black missing texture.
+
+Fixed the Aster Table not dropping itself when mined with the required tool. The Aster Table now drops when mined with an iron-tier or better pickaxe.
+
+Fixed crafting an Aster Table not granting an advancement. Crafting an Aster Table now grants the chat-announcing **Aster Architect** advancement under the vanilla Story advancement tree.
+
+Fixed Dust of Enlightenment being too easy to obtain from barrels and chests in modded structures. Dust of Enlightenment no longer generates in modded structure loot by default, while servers can opt in with `chestLoot.enableDustInModdedChests`.
+
+Fixed SimplyTooltips overriding SolsRelicSystem and ItemRarity tooltip colors and producing broken-looking formatting. Relic tooltips now retain their intended colors and formatting when SimplyTooltips is installed on supported Minecraft versions.
+
+</article>
+
+<article class="release-entry" markdown>
+
+<div class="release-entry__meta"><span class="release-entry__version">v1.56</span><time datetime="2026-07-20">July 20, 2026</time></div>
 
 ## Fixes and improvements
 

@@ -17,6 +17,9 @@ The handler inserts its section before the late vanilla/mod tooltip tail. At def
 
 The main item name can be prefixed with its `+level` when `showLevelInName` is enabled.
 
+!!! note "SimplyTooltips compatibility"
+    In v1.57, relic-bearing items retain the native styled tooltip renderer when SimplyTooltips is installed on a supported Minecraft version. This preserves Relic System and Item Rarity colors and prevents broken-looking text formatting.
+
 ## Stat Summary
 
 Press ++i++ while no other GUI is open. The key can be changed under Controls → Sol's Relic System.
@@ -52,4 +55,4 @@ Dust has a confirmation/pity-selection phase, animated redistribution, and an Ol
 `/srs recycle` shows the held relic and exact Tier III core refund. It does not destroy the item until confirmation and revalidation.
 
 !!! note "About relic locking"
-    In v1.56, the only available Sol's Relic System keybind is ++i++ for Stat Summary. Older references to relic locking or an R/X key do not apply to this version.
+    In v1.57, the only available Sol's Relic System keybind is ++i++ for Stat Summary. Older references to relic locking or an R/X key do not apply to this version.

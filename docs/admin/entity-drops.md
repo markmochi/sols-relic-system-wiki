@@ -89,6 +89,8 @@ Only loot-table paths beginning with `chests/` qualify. Resolution order is:
 
 The named rare list includes bastion treasure, nether bridge, woodland mansion, stronghold library, buried treasure, and several Trial Chamber reward tables.
 
+In v1.57, Dust injection into non-`minecraft` chest tables is separately controlled by `chestLoot.enableDustInModdedChests` and is **off by default**. This prevents common barrels or chests in modded structures from using the configured `dustModdedChance`. Aster Core chest injection continues to use `moddedMultiplier` independently.
+
 ## Migrations
 
-The config loader normalizes older whitelist/blacklist/entity-map schemas into the current formats and upgrades known older Dust defaults. Treat the rewritten current file as the new source of truth after starting v1.56.
+The config loader normalizes older whitelist/blacklist/entity-map schemas into the current formats and upgrades known older Dust defaults. Treat the rewritten current file as the new source of truth after starting v1.57.

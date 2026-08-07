@@ -16,6 +16,8 @@ The Aster Table is the central workstation. The material placed in its right slo
 
 The top-center ingredient is the tag `solsrelicsystem:aster_cores`; datapacks may extend that tag.
 
+Crafting the table for the first time grants **Aster Architect** under the vanilla Story advancements. The advancement displays a toast and announces in chat.
+
 ## Screen layout
 
 Read the table from left to right: **relic + material = previewed operation**.
@@ -74,4 +76,4 @@ Shift-click routing prefers the material slot for recognized materials, the reli
 
 ## Physical properties
 
-The Aster Table has 2.5 hardness, 6 blast resistance, stone sound, light level 8, a custom collision shape, cyan/gold ambient particles, and horizontal facing based on placement. It requires the correct tool for drops.
+The Aster Table has 2.5 hardness, 6 blast resistance, stone sound, light level 8, a custom collision shape, cyan/gold ambient particles, and horizontal facing based on placement. In v1.57, breaking it with an iron-tier or better pickaxe drops the table as an item.
