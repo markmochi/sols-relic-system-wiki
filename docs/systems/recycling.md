@@ -5,7 +5,7 @@ Recycling destroys one leveled relic and returns Tier III Aster Cores. It is a c
 ## Use it
 
 1. Hold the unwanted relic in the main hand.
-2. Run `/srs recycle` or `/solsrelic recycle`.
+2. Run `/sol relicsystem recycle`.
 3. Review the confirmation overlay, including item, rarity, level, stats, rerolls, and core refund.
 4. Confirm within 30 seconds without changing the selected hotbar slot or relic.
 

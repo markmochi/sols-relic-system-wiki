@@ -1,6 +1,6 @@
 # Advancements
 
-Sol's Relic System v1.57 includes a crafting advancement and a progression chain based on collecting its rare materials.
+Sol's Relic System v1.5.8 includes a crafting advancement and a progression chain based on collecting its rare materials.
 
 ## Aster Architect
 
@@ -25,7 +25,7 @@ Crafting the table grants **Aster Architect**, shows its toast, and announces th
 
 **First Spark of Resonance** is the visible root and supplies the advancement tree's proper background texture. The seven follow-up advancements stay hidden until their requirements are met. Every completed advancement shows a toast and announces in chat.
 
-The chain tracks obtaining materials, not successfully performing the associated ascension or reroll.
+The chain tracks obtaining materials, not successfully performing the associated ascension or reroll. In v1.5.8, Forge 1.16.5 inventory triggers require the exact Resonance Core or Dust item; unrelated inventory changes no longer grant the progression chain.
 
 <div class="gallery-row">
   <div class="item-frame"><div class="item-sprite item-sprite--r1"></div><small>First Spark</small></div>

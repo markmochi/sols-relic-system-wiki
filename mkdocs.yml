@@ -1,7 +1,7 @@
 site_name: Sol's Relic System
 site_description: The complete field guide to relics, ascension, builds, and server configuration.
 site_url: https://markmochi.github.io/sols-relic-system-wiki/
-copyright: Sol's Relic System v1.57 Field Guide
+copyright: Sol's Relic System v1.5.8 Field Guide
 
 theme:
   name: material
@@ -69,6 +69,7 @@ extra:
 nav:
   - Field Guide: index.md
   - Changelog: changelog.md
+  - Downloads: https://www.curseforge.com/minecraft/mc-mods/sols-relic-system/files
   - Start Here:
       - Installation: getting-started/installation.md
       - Five-minute start: getting-started/quick-start.md

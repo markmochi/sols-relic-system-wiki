@@ -37,9 +37,11 @@ Dealing damage to another entity or being damaged by a living attacker marks com
 
 - editing and toggling phantom slots is rejected;
 - slot borders turn red;
-- a countdown badge appears by the left side of the hotbar by default.
+- an optional countdown badge can show the remaining time; it is **disabled by default**.
 
-The server may set the duration to 0, move the badge to another anchor, offset it, or allow Game Master operators to bypass it. Operator bypass is disabled by default.
+The server may set the duration to 0 or allow Game Master operators to bypass it. Operator bypass is disabled by default.
+
+To show the badge, enable `phantomSlots.combatHudEnabled` in your local `config/solsrelicsystem-common.toml`. When enabled, it appears at `BOTTOM_RIGHT` by default. Use `phantomSlots.combatHudAnchor`, `phantomSlots.combatHudXOffset`, and `phantomSlots.combatHudYOffset` to customize its position. Hiding the badge does not remove the combat lock or red slot borders. The illustration above shows the optional timer enabled.
 
 ## Death and persistence
 

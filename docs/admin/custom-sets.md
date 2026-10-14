@@ -82,5 +82,5 @@ Built-in sets can use `name_key` and `lore_key`, resolved from the client's lang
 
 ## Reload and test
 
-Run `/srs reload`, equip two pieces, inspect a relic tooltip and ++i++ summary, then equip all four. Check live attributes/damage rather than only text before deployment.
+Run `/sol relicsystem reload`, equip two pieces, inspect a relic tooltip and ++i++ summary, then equip all four. Check live attributes/damage rather than only text before deployment.
 

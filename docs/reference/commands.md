@@ -1,25 +1,26 @@
 # Commands
 
-Every command is available under `/solsrelic` and the shorter `/srs` alias.
+All commands use `/sol relicsystem`. The old `/srs` and `/solsrelic` roots have been removed in v1.5.8; use the new commands in chat, scripts, and server documentation.
 
 ## Player commands
 
 | Command | Purpose |
 |---|---|
-| `/srs help` | Lists player commands and admin commands when permitted |
-| `/srs info` | Shows held relic rarity, level, next EXP, main stat, sub-stats, and upgrade counts |
-| `/srs stats` | Aggregates equipped and active phantom stats plus active set bonuses |
-| `/srs recycle` | Opens confirmation to destroy the held leveled relic for Tier III cores |
+| `/sol relicsystem help` | Lists player commands and admin commands when permitted |
+| `/sol relicsystem info` | Shows held relic rarity, level, next EXP, main stat, sub-stats, and upgrade counts |
+| `/sol relicsystem stats` | Aggregates equipped and active phantom stats plus active set bonuses |
+| `/sol relicsystem recycle` | Opens confirmation to destroy the held leveled relic for Tier III cores |
 
 ## Game Master commands
 
-These use the loader's Game Master permission level.
+These require operator/Game Master permission. The `<player>` target must be online.
 
 | Command | Purpose |
 |---|---|
-| `/srs setlevel <0..24>` | Sets held relic level, respecting its rarity cap |
-| `/srs resetrelic` | Removes the held stack's relic data |
-| `/srs reload` | Reloads generated JSON configs and regenerates instructions |
+| `/sol relicsystem setlevel <0..24>` | Sets held relic level, respecting its rarity cap |
+| `/sol relicsystem resetrelic` | Removes the held stack's relic data |
+| `/sol relicsystem stats <player>` | Shows the combined Relic stats of another online player |
+| `/sol relicsystem reload` | Validates and reloads the common TOML and all Relic JSON configs, regenerates instructions, refreshes online inventories/attributes/set bonuses, and syncs server settings |
 
 ## `setlevel` behavior
 
@@ -31,5 +32,5 @@ The command removes only `SolsRelicData`, not Item Rarity data. If the item rema
 
 ## Command versus screen totals
 
-`/srs stats` is useful for logs and chat, while ++i++ opens the richer Stat Summary interface. Both account for active phantom overrides and material/offhand multipliers; speed caps and the final live attributes remain the ultimate gameplay state.
+`/sol relicsystem stats` is useful for logs and chat, while ++i++ opens the richer Stat Summary interface. Both account for active phantom overrides and material/offhand multipliers; speed caps and the final live attributes remain the ultimate gameplay state.
 

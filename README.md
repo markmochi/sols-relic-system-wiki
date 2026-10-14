@@ -1,6 +1,6 @@
 # Sol's Relic System Wiki
 
-The complete player and server-owner guide for Sol's Relic System v1.55.
+The complete player and server-owner guide for Sol's Relic System v1.5.8.
 
 ## [Open the Field Guide](https://markmochi.github.io/sols-relic-system-wiki/)
 

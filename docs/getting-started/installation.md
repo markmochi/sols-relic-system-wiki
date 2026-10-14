@@ -1,15 +1,15 @@
 # Installation
 
-Sol's Relic System requires the matching build of **Sol's Item Rarity 1.71 or newer**. Keep the Minecraft version and loader identical across both mods.
+Sol's Relic System requires the matching build of **Sol's Item Rarity 1.7.2 or newer**. Keep the Minecraft version and loader identical across both mods.
 
 ## Version matrix
 
 | Minecraft | Loader | Minimum loader declared by code | Relic System | Required Item Rarity |
 |---|---|---:|---:|---:|
-| 1.16.5 | Forge | 36.2.0 | 1.57 | 1.71+ |
-| 1.20.1 | Forge | 47.0.0 | 1.57 | 1.71+ |
-| 1.21.1 | NeoForge | 21.1.1 | 1.57 | 1.71+ |
-| 1.21.11 | NeoForge | 21.11.42 | 1.57 | 1.71+ |
+| 1.16.5 | Forge | 36.2.0 | 1.5.8 | 1.7.2+ |
+| 1.20.1 | Forge | 47.0.0 | 1.5.8 | 1.7.2+ |
+| 1.21.1 | NeoForge | 21.1.1 | 1.5.8 | 1.7.2+ |
+| 1.21.11 | NeoForge | 21.11.42 | 1.5.8 | 1.7.2+ |
 
 !!! danger "Do not mix loaders"
     A Forge jar cannot run on NeoForge, and a jar for one Minecraft version cannot be reused on another. For example, both the Relic System and Item Rarity jars in a 1.21.1 instance must be their **1.21.1 NeoForge** builds.
@@ -27,11 +27,10 @@ The client needs the mod because relic tooltips, the Aster Table screen, confirm
 
 ## Confirm it loaded
 
-Run either command in a world:
+Run this command in a world:
 
 ```text
-/srs help
-/solsrelic help
+/sol relicsystem help
 ```
 
 Then open Controls and look for the **Sol's Relic System** category. The default Stat Summary key is ++i++.
@@ -43,15 +42,16 @@ The mod creates the following files in the server configuration directory:
 ```text
 config/
 ├─ solsrelicsystem-common.toml
-├─ aster_core_mobs.json
-├─ dust_of_enlightenment_mobs.json
-├─ relic_blacklist.json
-├─ relic_whitelist.json
-├─ set_bonuses.json
-└─ instructions.txt
+└─ solsrelicsystem/
+   ├─ aster_core_mobs.json
+   ├─ dust_of_enlightenment_mobs.json
+   ├─ relic_blacklist.json
+   ├─ relic_whitelist.json
+   ├─ set_bonuses.json
+   └─ instructions.txt
 ```
 
-Use `/srs reload` after editing JSON files. It requires Game Master permission. Restarting is safest after changing the common TOML.
+Use `/sol relicsystem reload` after editing the common TOML or JSON files. It requires operator/Game Master permission and immediately refreshes online inventories, equipped attributes, set bonuses, and synchronized server settings. Invalid files are reported instead of replacing working settings. See [Configuration](../admin/configuration.md#reload-strategy).
 
 ## Optional companion
 
@@ -61,7 +61,7 @@ Sol's Damage Indicator can display the custom crits more clearly. The Relic Syst
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| Missing dependency error | Item Rarity is absent or older than 1.71 | Install its matching 1.71+ jar |
+| Missing dependency error | Item Rarity is absent or older than 1.7.2 | Install its matching 1.7.2+ jar |
 | Invalid mod file / wrong loader | Forge and NeoForge builds were mixed | Replace the jar with the correct loader build |
 | Server rejects connection | Client/server mod lists differ | Install matching versions on both sides |
 | Relic stats appear twice | Item Rarity bonuses were re-enabled | Keep `disableRarityStatBonuses = true` unless intentional |

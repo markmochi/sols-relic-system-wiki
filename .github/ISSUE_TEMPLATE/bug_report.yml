@@ -47,7 +47,7 @@ body:
     id: relic_version
     attributes:
       label: Sol's Relic System version
-      placeholder: "1.55"
+      placeholder: "1.5.8"
     validations:
       required: true
 
@@ -55,7 +55,7 @@ body:
     id: rarity_version
     attributes:
       label: Sol's Item Rarity version
-      placeholder: "1.7"
+      placeholder: "1.7.2"
     validations:
       required: true
 

@@ -11,7 +11,69 @@ Follow the major additions, compatibility improvements, and fixes introduced in 
 
 <article class="release-entry release-entry--latest" markdown>
 
-<div class="release-entry__meta"><span class="release-entry__version">v1.57</span><time datetime="2026-08-07">August 7, 2026</time><span class="release-entry__badge">Latest</span></div>
+<div class="release-entry__meta"><span class="release-entry__version">v1.5.8</span><span class="release-entry__badge">Latest</span></div>
+
+## v1.5.8
+
+### 🍀 Luck System Improvements
+
+- **LUCK% now properly affects loot drops!** Luck from equipped Relics and set bonuses now increases your chances of receiving additional loot from chests, mobs, and supported modded loot sources.
+- **Updated Luck scaling:**
+  - Every **1% LUCK** provides a **0.5% chance** for an additional loot roll.
+  - At **100% LUCK**, you reach the maximum **50% bonus loot-roll chance**.
+  - For items dropped directly by Relic System, Luck instead increases their existing drop chances.
+  - **Example:** With **20% LUCK**, you gain a **10% chance** for an extra loot roll and a **10% relative increase** to direct Relic System drop rates.
+- Luck now also affects **Aster Cores, Resonance Cores, and Dust of Enlightenment** dropped directly by Relic System.
+- Improved Luck compatibility with vanilla and modded loot, including rare drops such as **Wither Skeleton Skulls**.
+
+### ⚔️ Relic System Fixes
+
+- Fixed a crash when hovering over certain modded armor, including the reported **Knight Quest** armor issue on NeoForge 1.21.1. Similar fixes were also applied to Forge 1.16.5 and 1.20.1.
+- Fixed an issue on NeoForge 1.21.1 where animal armor could incorrectly affect Relic stat scaling on player armor.
+- Fixed whitelisted items sometimes not receiving Relic stats, even after restarting the server.
+- Relic stats are now automatically applied to eligible items when players join, obtain new items, or have their inventories restored by other mods.
+- Fixed Relic stats sometimes appearing missing when a player's local whitelist settings differed from the server's settings.
+- Improved Relic stat consistency after respawning, reconnecting, and restarting the server.
+
+### 🎮 HUD Improvements
+
+- The **Phantom Combat Lock** HUD indicator is now optional and **disabled by default** for a cleaner interface.
+- Players who prefer having a combat timer can still enable it through their configuration.
+- When enabled, the indicator now appears in the **bottom-right corner** by default.
+- The HUD position can still be customized through the configuration settings.
+
+### 💻 Commands & Configuration
+
+- **Updated the command system!** All Relic System commands now use `/sol relicsystem` for better consistency with other Sol mods.
+- Removed the old `/srs` and `/solsrelic` commands.
+- Available commands:
+  - `/sol relicsystem help` — View all available commands.
+  - `/sol relicsystem info` — View information about your currently held Relic.
+  - `/sol relicsystem stats` — View your total equipped Relic stats.
+  - `/sol relicsystem stats <player>` — View another online player's Relic stats (operators only).
+  - `/sol relicsystem reload` — Reload all Relic System configurations without restarting the server (operators only).
+- **Improved configuration reloading.** Server operators can now apply changes to all Relic System configuration files immediately, including item settings, player attributes, and set bonuses.
+- Configuration changes now automatically update online players' Relic stats and applicable settings.
+- Improved configuration organization and consistency across supported Minecraft versions.
+
+### 🛠️ Compatibility & Stability
+
+- **Fixed Item Rarity compatibility.** Sol's Relic System now correctly recognizes **Sol's Item Rarity v1.7.2 and newer**.
+- **Fixed Resonance advancements on Forge 1.16.5.** Advancements now unlock only when players obtain the required Resonance Core or Dust of Enlightenment, instead of triggering from unrelated inventory changes.
+- Improved handling of invalid or broken configuration files to prevent unexpected startup issues.
+- Invalid configuration files no longer prevent the mod or server from starting. Errors are reported so server owners can identify and fix the affected files.
+- Reloading configurations now checks for errors and keeps previously working settings when a file cannot be loaded.
+- Improved overall reliability and consistency when applying Relic settings, equipment bonuses, and inventory changes.
+
+**Curseforge**: [https://www.curseforge.com/minecraft/mc-mods/sols-relic-system/files](https://www.curseforge.com/minecraft/mc-mods/sols-relic-system/files)
+
+**Modrinth**: [https://modrinth.com/mod/sols-relic-system/versions](https://modrinth.com/mod/sols-relic-system/versions)
+
+</article>
+
+<article class="release-entry" markdown>
+
+<div class="release-entry__meta"><span class="release-entry__version">v1.57</span><time datetime="2026-08-07">August 7, 2026</time></div>
 
 ## Gameplay, progression, loot, and tooltip fixes
 

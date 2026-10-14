@@ -35,10 +35,10 @@ hide:
 ## Release timeline
 
 <div class="relic-card relic-card--gold release-preview">
-  <div class="relic-card__kicker">Latest release · August 2026</div>
-  <h3>Sol's Relic System v1.57</h3>
-  <p>Fixes Jump Boost movement, advancement progression and presentation, Aster Table drops, modded-structure Dust balance, and SimplyTooltips compatibility.</p>
-  <p><a href="changelog/">Explore every release from v1.5 →</a></p>
+  <div class="relic-card__kicker">Latest update · v1.5.8</div>
+  <h3>Sol's Relic System v1.5.8</h3>
+  <p>Makes Luck affect loot, fixes modded armor crashes and missing Relic stats, adds an optional combat HUD, and introduces <code>/sol relicsystem</code> commands with full configuration reloads.</p>
+  <p><a href="changelog/">Read the v1.5.8 changelog and full release timeline →</a></p>
 </div>
 
 ## The progression loop
@@ -81,7 +81,7 @@ Follow one relic through six decisions. You do not need to learn the endgame sys
 <p class="flow-next"><strong>New player?</strong> Stop after step 3 for now. The <a href="getting-started/quick-start/">five-minute guide</a> walks through that first upgrade.</p>
 
 !!! info "Default settings"
-    Values shown throughout the guide use Sol's Relic System v1.57 defaults. Server configuration can change drop rates, XP, caps, eligible items, armor sets, and other balance settings.
+    Values shown throughout the guide use Sol's Relic System v1.5.8 defaults. Drop-rate tables are base rates at 0% Luck unless stated otherwise. Server configuration can change drop rates, XP, caps, eligible items, armor sets, and other balance settings.
 
 ## What is covered
 

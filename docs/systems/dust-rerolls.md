@@ -97,6 +97,8 @@ The server keeps recovery copies of the original relic and Dust while the choice
 
 ## Getting Dust
 
+These are base rates at **0% Luck**. Direct player-kill Dust chances receive Luck's relative increase, while chest loot tables can receive an extra roll. At 50% Luck, the default Ender Dragon direct Dust rate rises from 8% to 10%. The configured eligibility rules and drop switches still apply. See [Luck and loot drops](combat-stats.md#luck-and-loot-drops).
+
 ??? info "Default mob and chest rates"
     **Direct player-kill drops**
 
@@ -116,7 +118,7 @@ The server keeps recovery copies of the original relic and Dust while the choice
     |---|---:|
     | Common vanilla | 1% |
     | Rare vanilla | 3% |
-    | Modded chest namespace | 3% |
+    | Modded chest namespace | Off by default; 3% if `enableDustInModdedChests` is enabled |
     | Ancient City / ice box | 5% |
     | End City treasure | 7% |
 

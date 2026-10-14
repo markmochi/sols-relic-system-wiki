@@ -70,6 +70,10 @@ The ascension seed mixes item ID, set ID, original relic seed, current/target ra
 5. Confirm. The core is consumed and the target-rarity relic returns to inventory.
 6. Level the relic again to use the new cap and milestones.
 
+## Finding Resonance Cores
+
+Allowed player-killed mobs have separate base chances of 0.8% for Core I and 0.5% for Core II. In v1.5.8, effective equipped Relic and set-bonus Luck increases those rates relatively, capped at +50%. See [Aster Cores and drops](aster-cores.md#bonus-resonance-drops). Higher Core levels follow the crafting chain below.
+
 ## Core crafting chain
 
 - Core I: Tier III and Tier II Aster Cores around a Nether Star.

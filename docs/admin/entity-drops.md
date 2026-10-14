@@ -47,9 +47,18 @@ Set an entry to 0 to disable that matching key. Values clamp to 0–100.
 
 Both mob handlers require `damageSource.getEntity()` to be a Player. This is stricter than merely being nearby or causing an indirect automation kill. Test modded projectiles/summons: if their source entity is not exposed as the player, material drops will not occur even though universal ATK may resolve some owner relationships separately.
 
-## No Looting multiplier
+## Luck and Looting
 
-The custom drop roll never reads Looting. A higher Looting level does not change these exact percentages.
+The configured percentages are **base chances at 0% Luck**. In v1.5.8, direct Aster Core, Resonance Core, and Dust rolls use:
+
+```text
+bonus = min(max(effective Luck, 0), 100) × 0.005
+final direct chance = min(base chance × (1 + bonus), 100%)
+```
+
+Use effective equipped Relic and set-bonus Luck from the Stat Summary. Other effects that change Minecraft's Luck attribute also contribute to this bonus. At 20% Luck, a configured 8% Dust rate becomes 8.8%; at 50% Luck it becomes 10%. The default 12% combined Aster chance becomes 13.2% or 15%, respectively. The cap is a 50% relative increase at 100% Luck.
+
+Looting is not read by the direct material handlers. It still affects normal vanilla or modded loot tables where their own rules use it. Those tables get a chance of one extra roll instead of having every condition's percentage rewritten; see [Luck and loot drops](../systems/combat-stats.md#luck-and-loot-drops).
 
 ## Chance design example
 
@@ -89,8 +98,10 @@ Only loot-table paths beginning with `chests/` qualify. Resolution order is:
 
 The named rare list includes bastion treasure, nether bridge, woodland mansion, stronghold library, buried treasure, and several Trial Chamber reward tables.
 
-In v1.57, Dust injection into non-`minecraft` chest tables is separately controlled by `chestLoot.enableDustInModdedChests` and is **off by default**. This prevents common barrels or chests in modded structures from using the configured `dustModdedChance`. Aster Core chest injection continues to use `moddedMultiplier` independently.
+In v1.5.8, Dust injection into non-`minecraft` chest tables is separately controlled by `chestLoot.enableDustInModdedChests` and is **off by default**. This prevents common barrels or chests in modded structures from using the configured `dustModdedChance`. Aster Core chest injection continues to use `moddedMultiplier` independently.
+
+Chest rates and multipliers are baseline settings. With Luck, qualifying chest loot tables can receive one additional roll, including eligible injected Relic rewards. A bonus roll does not bypass `chestLoot.enabled` or the modded-Dust gate. It applies when loot is generated; reopening an already-generated chest does not create another roll.
 
 ## Migrations
 
-The config loader normalizes older whitelist/blacklist/entity-map schemas into the current formats and upgrades known older Dust defaults. Treat the rewritten current file as the new source of truth after starting v1.57.
+The config loader normalizes older whitelist/blacklist/entity-map schemas into the current formats and upgrades known older Dust defaults. Treat the rewritten current file as the new source of truth after starting v1.5.8.

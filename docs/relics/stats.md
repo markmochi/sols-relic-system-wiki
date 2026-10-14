@@ -88,7 +88,7 @@ Because the available pool shrinks after every selection, exact percentages chan
 | Move Speed | Multiplies movement speed, with a default +20% total relic cap |
 | ATK Speed | Multiplies attack speed, with a default +25% total relic cap |
 | Jump Boost | Applied through the jump handler; approximately 35% reaches a two-block jump under normal conditions |
-| Luck | Converts percentage into Minecraft Luck attribute contribution (`value / 100 × 5`) |
+| Luck | Adds Minecraft Luck (`value / 100 × 5`), which grants a 0.5% extra loot-roll chance per effective 1% Luck, capped at 50%; directly rolled Relic materials receive the equivalent relative drop-rate increase |
 | Durability | Converts bonus to prevention chance `bonus / (100 + bonus)` after Unbreaking processing |
 
 ## Effective-stat calculator

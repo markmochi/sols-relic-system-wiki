@@ -65,6 +65,6 @@ Milestone results are calculated from the relic's stored seed and level. Closing
 - A weak starting set of **stat types** is usually not worth expensive investment; Dust cannot replace those types.
 - A good set of types with poor milestone distribution can become a Dust candidate at max level.
 - A lower-rarity item can be raised one rarity at a time through [Resonance ascension](../systems/ascension.md).
-- An unwanted leveled item can be converted into Tier III cores with `/srs recycle`.
+- An unwanted leveled item can be converted into Tier III cores with `/sol relicsystem recycle`.
 
 <div class="build-callout"><strong>Best early rule:</strong> choose the relic for its main stat and sub-stat types first. Values and upgrade distribution matter later; types are the hardest part to change.</div>

@@ -76,4 +76,4 @@ Shift-click routing prefers the material slot for recognized materials, the reli
 
 ## Physical properties
 
-The Aster Table has 2.5 hardness, 6 blast resistance, stone sound, light level 8, a custom collision shape, cyan/gold ambient particles, and horizontal facing based on placement. In v1.57, breaking it with an iron-tier or better pickaxe drops the table as an item.
+The Aster Table has 2.5 hardness, 6 blast resistance, stone sound, light level 8, a custom collision shape, cyan/gold ambient particles, and horizontal facing based on placement. In v1.5.8, breaking it with an iron-tier or better pickaxe drops the table as an item.

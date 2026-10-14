@@ -14,7 +14,7 @@ Relic values pass through several layers before affecting play. The tooltip and 
 | Netherite | 1.12× | Netherite, elytra |
 | Special | 1.00× | Unrecognized/custom material fallback |
 
-The detector first uses armor material identity, then registry-path tokens. Bows, crossbows, and shields default to iron; tridents to diamond; elytra to netherite.
+Forge 1.16.5/1.20.1 and NeoForge 1.21.1 use native material identity and defense-based classification for modded armor. Incomplete defense data now falls back safely to Special (1.00×). On NeoForge 1.21.1, only helmet, chestplate, leggings, and boots contribute; animal armor defense is excluded. NeoForge 1.21.11 uses material-name and item-path tokens. Bows, crossbows, and shields default to iron; tridents to diamond; elytra to netherite.
 
 ## Default scaling knobs
 
@@ -85,10 +85,40 @@ prevention chance = effective Durability / (100 + effective Durability)
 
 A displayed +20 Durability gives about 16.67% prevention, not a flat 20%. It also has a last-durability recovery path that can restore a would-be-destroyed item to one durability when prevention succeeds.
 
-## Luck and jump
+## Luck and loot drops
 
-- Luck% becomes Minecraft Luck attribute at `effective value / 100 × 5`.
-- Jump Boost modifies jump movement; roughly +35% reaches the normal two-block-jump region.
+In v1.5.8, equipped Relic and set-bonus **LUCK%** affects loot directly. Use the effective Luck total in the Stat Summary after material and offhand scaling.
+
+- Every **1% Luck** gives a **0.5% chance** to generate one additional roll of an applicable loot table.
+- **100% Luck** reaches the cap: **50% bonus-roll chance**. Luck above this does not raise this bonus further.
+- Loot-table drops include chest rewards, vanilla mob drops such as Wither Skeleton Skulls, and supported modded loot. All normal table conditions still apply; an extra roll does not guarantee a rare item.
+- Direct Aster Core, Resonance Core, and Dust mob drops instead have their existing chances multiplied by the equivalent relative bonus, with each chance capped at 100%.
+
+| Effective Luck | Extra loot-roll chance | Direct material drop multiplier |
+|---|---:|---:|
+| 0% | 0% | 1.00× |
+| 20% | 10% | 1.10× |
+| 50% | 25% | 1.25× |
+| 100% or more | 50% | 1.50× |
+
+For example, **20% Luck** raises a direct **8% Dust** drop chance to **8.8%**, rather than adding 10 percentage points. Default **12%** combined Aster Core odds become **13.2%**. See [Mob and chest drops](../admin/entity-drops.md) for eligibility and configuration.
+
+### Wither Skeleton Skull example
+
+With default Java loot tables, eligible player kills, **50% displayed Luck**, and no other Luck effects:
+
+| Looting | Vanilla chance of a skull | With Luck: chance of at least one skull |
+|---|---:|---:|
+| None | 2.5% | 3.1094% |
+| III | 5.5% | 6.7994% |
+
+Because the bonus roll can also succeed when the original roll succeeds, a kill can occasionally produce two skulls. Average skull yield rises by **25%**: without Looting, from **2.5** to **3.125 skulls per 100 kills**. The chance of at least one skull is `p + q × p × (1 - p)`, where `p` is the vanilla chance and `q` is the bonus-roll chance.
+
+These are v1.5.8 rules; v1.57 did not include the bonus-roll implementation. Other Luck effects and loot-changing mods can alter the result. Internally, Relic Luck contributes to Minecraft's Luck attribute at `effective Luck / 100 × 5`; the loot bonus uses that attribute.
+
+## Jump Boost
+
+Jump Boost modifies jump movement; roughly +35% reaches the normal two-block-jump region.
 
 ## Build archetypes
 

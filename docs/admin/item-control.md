@@ -49,9 +49,11 @@ A bare namespace is allowed in the whitelist, but food, blocks, crafting materia
 
 ## Existing items
 
-Adding an item to the blacklist prevents normal future eligibility; it does not automatically erase already-stored relic data from existing stacks. Use admin tooling carefully if a migration must clean old data.
+In v1.5.8, the server reconciles existing inventory items as well as future pickups. After a reload, adding a normal item to the blacklist removes its invalid stored Relic data during reconciliation and refreshes its applied bonuses. Supported special relics keep their integration-defined eligibility.
 
-Adding an item to the whitelist affects it when assignment next processes an eligible data-less stack. A fresh copy is the simplest test.
+Adding an item to the whitelist assigns stats to eligible stacks that do not already have Relic data, including items already in online players' inventories. The same checks run on login and respawn and periodically after inventories are restored or new items are obtained. Existing valid Relic rolls are retained.
+
+Server-assigned stored stats control client tooltips; a different or malformed local whitelist no longer hides valid server data.
 
 ## Updating the lists
 
@@ -59,5 +61,5 @@ Adding an item to the whitelist affects it when assignment next processes an eli
 2. Record the exact lower-case registry ID.
 3. Edit one JSON file.
 4. Validate the JSON.
-5. Run `/srs reload`.
-6. Test a fresh stack and inspect its main-stat pool.
+5. Run `/sol relicsystem reload`.
+6. Inspect an existing eligible stack in an online player's inventory as well as a new copy; the reload applies the new rules immediately. Check its main-stat pool and equipped bonuses.

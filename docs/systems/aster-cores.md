@@ -12,14 +12,16 @@ Tier I is the strongest and rarest core. Tier numbering describes potency, not t
 
 When a player directly kills an allowed entity, the game performs one combined tier roll:
 
-| Outcome | Default interval on the roll | Exact chance |
+The following rates are the defaults at **0% effective Luck**.
+
+| Outcome | Default interval on the roll | Base chance |
 |---|---:|---:|
 | Tier I | 0–1 | 1% |
 | Tier II | 1–4 | 3% |
 | Tier III | 4–12 | 8% |
 | No Aster Core | 12–100 | 88% |
 
-At most one Aster Core comes from this roll. Looting is not consulted by this handler, and environmental/non-player kills fail the player-credit check.
+At most one Aster Core comes from this direct roll. Equipped Relic and set-bonus Luck now increase each tier's base rate: 20% Luck gives a 10% relative increase, so Tier I/II/III become 1.1%/3.3%/8.8% (13.2% combined). At 50% Luck, the combined default rate is 15%. Looting is not consulted by this handler, and environmental/non-player kills fail the player-credit check.
 
 ## Default allowed mobs
 
@@ -43,11 +45,11 @@ The same allowed mobs also make a separate rare-material roll before the ordinar
 - **Resonance Core I:** 0.8% after the Core II interval
 - total chance for either: 1.3%
 
-Because this roll is separate, a valid player kill can drop both one low Resonance Core and one Aster Core.
+These are base rates at 0% Luck. Luck scales this separate roll too: at 50% Luck, Core II becomes 0.625% and Core I becomes 1.0% (1.625% combined). Because this roll is separate, a valid player kill can drop both one low Resonance Core and one Aster Core.
 
 ## Chest drops
 
-For each chest loot table, default Aster chances are multiplied by category:
+For each chest loot table, base Aster chances are multiplied by category. These figures are before Luck's chance of an additional loot-table roll:
 
 | Chest category | Multiplier | Combined chance | Possible stack increase |
 |---|---:|---:|---|
@@ -60,7 +62,7 @@ For each chest loot table, default Aster chances are multiplied by category:
 When a chest core pool succeeds, the tier is selected with weights proportional to its multiplied chance. The rare category includes bastion treasure, nether bridge, woodland mansion, stronghold library, buried treasure, and the listed normal/ominous Trial Chamber reward tables.
 
 !!! note
-    On some loader versions the injection implementation differs (loot-table event versus global modifiers), but the v1.57 configuration intent and documented category defaults are shared.
+    The v1.5.8 category defaults are shared across all four supported versions. Luck's bonus roll includes eligible Relic pools injected into chest tables when that loot is generated; opening an already-generated chest again does not reroll it.
 
 ## Best farming approach
 

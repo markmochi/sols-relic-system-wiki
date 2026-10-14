@@ -2,7 +2,7 @@
 
 The common TOML controls global numbers and switches. JSON files handle entity lists, per-entity Dust chances, item inclusion/exclusion, and armor sets.
 
-Version 1.56 removed obsolete anvil-cost, fallback Dust-chance, and relic-lock settings. Version 1.57 adds a separate opt-in gate for Dust in modded structure loot. Aster Core leveling is handled entirely by the Aster Table, and the only Relic System keybind is the Stat Summary key.
+Version 1.56 removed obsolete anvil-cost, fallback Dust-chance, and relic-lock settings. Version 1.57 introduced a separate opt-in gate for Dust in modded structure loot. Version 1.5.8 adds real Luck-based loot bonuses, full configuration reloads, automatic inventory reconciliation, and an optional combat HUD. Aster Core leveling is handled entirely by the Aster Table, and the only Relic System keybind is the Stat Summary key.
 
 ## General
 
@@ -35,7 +35,7 @@ Version 1.56 removed obsolete anvil-cost, fallback Dust-chance, and relic-lock s
 | `tier2XP` | 200 | Relic EXP per Tier II |
 | `tier3XP` | 80 | Relic EXP per Tier III / recycle conversion unit |
 
-The three tier chances add together for the total chance of receiving any Aster Core. At defaults, that is **12%** per eligible mob. The Aster Table does not charge vanilla player levels.
+The three tier chances add together for the total chance of receiving any Aster Core. At defaults and **0% Luck**, that is **12%** per eligible mob. Equipped Relic and set-bonus Luck increases these direct drop chances by the relative multiplier described in [Luck and drops](../systems/combat-stats.md#luck-and-loot-drops). The Aster Table does not charge vanilla player levels.
 
 ## Leveling
 
@@ -51,7 +51,7 @@ Changing the interval changes both milestone detection and the UI's crossed-mile
 
 | Key | Default | Meaning |
 |---|---:|---|
-| `dustOfEnlightenment.dropEnabled` | true | Enable configured mob and chest drops; when false, only commands/Creative remain |
+| `dustOfEnlightenment.dropEnabled` | true | Enable configured mob and chest drops; disabling drops does not disable crafting |
 | `dustOfEnlightenment.pityThreshold` | 5 | Every Nth reroll; 0 disables pity |
 
 Mob-specific chances are configured only in `dust_of_enlightenment_mobs.json`. Chest categories use the direct `chestLoot.dust*Chance` values below.
@@ -73,9 +73,9 @@ Mob-specific chances are configured only in `dust_of_enlightenment_mobs.json`. C
 | `enableDustInModdedChests` | false |
 | `dustModdedChance` | 3.0% |
 
-Aster values are multipliers over the tier chances. Higher multipliers can also allow multi-core stacks. Dust values are direct final percentages.
+Aster values are multipliers over the tier chances. Higher multipliers can also allow multi-core stacks. Dust values are base percentages for the injected chest pool, before Luck's chance of an extra loot-table roll.
 
-`enableDustInModdedChests` is disabled by default in v1.57 so ordinary barrels and chests added by structure mods cannot make this endgame reroll material common. When enabled, `dustModdedChance` becomes the final Dust percentage for qualifying non-`minecraft` chest loot tables. This gate does not disable Aster Core injection into modded chest tables.
+`enableDustInModdedChests` is disabled by default in v1.5.8 so ordinary barrels and chests added by structure mods cannot make this endgame reroll material common. When enabled, `dustModdedChance` sets the base Dust chance for qualifying non-`minecraft` chest loot tables. This gate does not disable Aster Core injection into modded chest tables.
 
 ## Balance
 
@@ -107,7 +107,7 @@ All accept 0.1–2.0. They affect displayed effective values and applied stats.
 | Key | Default | Meaning |
 |---|---:|---|
 | `setBonuses.enabled` | true | Enable material/custom 2-piece and 4-piece bonuses |
-| `recycling.enabled` | true | Let `/srs recycle` convert an upgraded held relic into Tier III Aster Cores |
+| `recycling.enabled` | true | Let `/sol relicsystem recycle` convert an upgraded held relic into Tier III Aster Cores |
 | `recycling.refundPercent` | 60.0 | Invested EXP refunded as the Tier III core equivalent |
 | `crossMod.disableRarityStatBonuses` | true | Prevent Item Rarity attribute stacking |
 
@@ -118,9 +118,12 @@ All accept 0.1–2.0. They affect displayed effective values and applied stats.
 | `phantomSlots.enabled` | true |
 | `phantomSlots.combatLockSeconds` | 30 |
 | `phantomSlots.opsBypassCombatLock` | false |
-| `phantomSlots.combatHudAnchor` | `HOTBAR_LEFT` |
+| `phantomSlots.combatHudEnabled` | false |
+| `phantomSlots.combatHudAnchor` | `BOTTOM_RIGHT` |
 | `phantomSlots.combatHudXOffset` | 0 |
 | `phantomSlots.combatHudYOffset` | 0 |
+
+The combat HUD is a local client preference in `config/solsrelicsystem-common.toml`. Set `phantomSlots.combatHudEnabled = true` to show the timer. Its default anchor is `BOTTOM_RIGHT`; existing customized anchors and offsets are preserved. These display preferences do not disable the server's combat lock.
 
 Valid anchors: `HOTBAR_LEFT`, `HOTBAR_RIGHT`, `TOP_LEFT`, `TOP_RIGHT`, `BOTTOM_LEFT`, `BOTTOM_RIGHT`, `CENTER`.
 
@@ -136,7 +139,11 @@ When enabled, ATK and ATK% contribute to supported non-melee damage when the own
 
 ## Reload strategy
 
-Use `/srs reload` for the generated JSON files. A server restart is the least ambiguous way to apply broad TOML changes.
+Edit `config/solsrelicsystem-common.toml` and the JSON files in `config/solsrelicsystem/`, then run `/sol relicsystem reload` as an operator. It validates and reloads **all** Relic System configuration files without requiring a server restart, refreshes online players' inventories, equipped attributes, and set bonuses, and sends updated server settings to clients.
+
+A validation failure reports the affected file and keeps the previously loaded settings. Fix the error and run the command again. At startup, malformed optional JSON files are logged and skipped with safe defaults for that file, so a bad JSON file does not stop the server. Missing files are generated in their usual locations.
+
+Client display preferences, such as tooltip visibility and the optional combat HUD, remain local to each player's common config.
 
 The server synchronizes the XP curve, milestone interval, maximum sub-stats, offhand efficiency, and stat-scaling values to connected players. Aster Table previews, relic tooltips, and Stat Summary therefore use the server's balance rather than stale client defaults.
 

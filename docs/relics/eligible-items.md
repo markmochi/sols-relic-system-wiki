@@ -42,7 +42,7 @@ Qualified combat axes include names such as `battle_axe`, `waraxe`, `great-axe`,
 
 ## Utility tools are intentionally excluded
 
-The current v1.57 code detects utility behavior before accepting generic tags or attack damage. Normal instances of these are not relic weapons:
+The current v1.5.8 code detects utility behavior before accepting generic tags or attack damage. Normal instances of these are not relic weapons:
 
 - pickaxes and mining drills/hammers;
 - shovels and spades;
@@ -67,4 +67,4 @@ Check in this order:
 2. The item or its namespace is not in `relic_blacklist.json`.
 3. It is actually equippable armor or detected as a weapon.
 4. If it is a utility/unusual item, add its exact ID to the whitelist.
-5. Run `/srs reload`, then reacquire or reprocess the item.
+5. Run `/sol relicsystem reload` as an operator and inspect the existing stack. Eligible items missing Relic data are assigned immediately for online players, with login, respawn, and periodic checks covering restored or newly obtained items.

@@ -18,7 +18,7 @@ The handler inserts its section before the late vanilla/mod tooltip tail. At def
 The main item name can be prefixed with its `+level` when `showLevelInName` is enabled.
 
 !!! note "SimplyTooltips compatibility"
-    In v1.57, relic-bearing items retain the native styled tooltip renderer when SimplyTooltips is installed on a supported Minecraft version. This preserves Relic System and Item Rarity colors and prevents broken-looking text formatting.
+    In v1.5.8, relic-bearing items retain the native styled tooltip renderer when SimplyTooltips is installed on a supported Minecraft version. This preserves Relic System and Item Rarity colors and prevents broken-looking text formatting.
 
 ## Stat Summary
 
@@ -26,7 +26,9 @@ Press ++i++ while no other GUI is open. The key can be changed under Controls â†
 
 ![Stat Summary screen overview](../assets/images/stat-summary.svg){ .game-shot }
 
-The screen aggregates effective equipped/phantom stats, base Crit values, caps, and active sets. The command equivalent is `/srs stats`.
+The screen aggregates effective equipped/phantom stats, base Crit values, caps, and active sets. The command equivalent is `/sol relicsystem stats`; operators can use `/sol relicsystem stats <player>` to inspect another online player. Displayed Luck includes effective equipped Relic and set-bonus contributions; see [Luck and loot drops](combat-stats.md#luck-and-loot-drops) for its actual effect on drops.
+
+Valid server-assigned Relic data controls tooltip display, even if the local client whitelist differs from the server or contains invalid JSON.
 
 ## Upgrade confirmation
 
@@ -52,7 +54,7 @@ Dust has a confirmation/pity-selection phase, animated redistribution, and an Ol
 
 ## Recycling preview
 
-`/srs recycle` shows the held relic and exact Tier III core refund. It does not destroy the item until confirmation and revalidation.
+`/sol relicsystem recycle` shows the held relic and exact Tier III core refund. It does not destroy the item until confirmation and revalidation.
 
 !!! note "About relic locking"
-    In v1.57, the only available Sol's Relic System keybind is ++i++ for Stat Summary. Older references to relic locking or an R/X key do not apply to this version.
+    In v1.5.8, the only available Sol's Relic System keybind is ++i++ for Stat Summary. Older references to relic locking or an R/X key do not apply to this version.
